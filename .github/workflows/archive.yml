@@ -44,4 +44,5 @@ jobs:
       - name: Get sha1 of .ytdlarchive
         id: sha1
         run: |
-          echo "::set-output name=sha1::$(cat ~/.tubeup/.ytdlarchive | shasum -C - | head -c 40)"
+          export BRAP=$(cat ~/.tubeup/.ytdlarchive | shasum -C - | head -c 40)
+          ::set-output name=sha1::$(echo $BRAP)
