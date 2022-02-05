@@ -30,7 +30,7 @@ jobs:
         id: cache
         with:
           path: '~/.tubeup'
-          key: ${{ matrix.channel }}-${{ hashFiles('~/.tubeup/.ytdlarchive')
+          key: ${{ matrix.channel }}-${{ hashFiles('~/.tubeup/.ytdlarchive') }}
           restore-keys: ${{ matrix.channel }}-
 
       - name: Download and upload channel videos
