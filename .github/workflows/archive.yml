@@ -12,10 +12,8 @@ jobs:
         channel: [UCpT46G77geEsEUOKzb49enQ, UC45TEIruqmhSHDkV8Mnn9Gw, UCBdCaezoJipdjufwKz-l2ZA, UCevKzawKjk-GDsAfe5ctIvQ, UCy6FQPAddTADou_GgwuY40A, UCleVUgeqcJcZzde-dZ90Gpg, UCZHLcqD05W23Prk-FHjsRLA, UC0MIRvnA9q7X1xluGFvyt2g, UCbvhpSoR3TQobIbIM9euZcQ, UCgAIPOyi1TjGzN3gfVbJ1cg, UCPoSYir-KCtAuybN-zsvoXg, UCR2vIHxqKXXD90UIilBfpGA, UCm4ukk3Su3p62cI5QmFpeZQ, UC1Yq1vShuN1ft0myXFchcsQ, UC0v-GoU_xhZ1sWj2iJ7YUrw, UCZvXEPVQaKdVYZDAK7IUvBg]
     
     steps:
-      - uses: actions/setup-python@v2
-
       - name: Set up Python
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v2
         with:
           python-version: '3.x'
 
