@@ -44,6 +44,4 @@ jobs:
       - name: Get sha1 of .ytdlarchive
         id: sha1
         run: |
-          ls ~/.tubeup
-          cat ~/.tubeup/.ytdlarchive
-          echo "::set-output name=sha1::$(shasum '~/.tubeup/.ytdlarchive')"
+          echo "::set-output name=sha1::$(cat ~/.tubeup/.ytdlarchive || shasum -C - || head -c 40)"
