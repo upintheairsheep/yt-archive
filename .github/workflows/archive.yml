@@ -21,13 +21,13 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install yt-dlp internetarchive tubeup
+          mkdir -p ~/.tubeup
 
-      - uses: actions/cache@v2
+      - uses: actions/cache@v3
         id: cache
         with:
-          path: '~/.tubeup/.ytdlarchive'
-          key: ${{ matrix.channel }}-${{ steps.sha1.outputs.sha1 }}
-          restore-keys: ${{ matrix.channel }}-
+          path: '~/.tubeup'
+          key: ${{ matrix.channel }}
 
       - name: Download and upload channel videos
         env: 
