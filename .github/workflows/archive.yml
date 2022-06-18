@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [phantom_arcade]
+        channel: [https://m.youtube.com/channel/UC16jB2frROhYHo1jUYrBEug]
     
     steps:
       - name: Set up Python
@@ -35,10 +35,10 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          yt-dlp -j --no-warnings --flat-playlist "https://twitch.tv/${{ matrix.channel }}/videos?filter=archives" | jq -r ".urls" > result.log
+          yt-dlp -j -v --no-warnings --flat-playlist "https://twitch.tv/${{ matrix.channel }}/videos?filter=archives" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
-            tubeup $p --use-download-archive || true
+            tubeup $p --debug --get-comments --use-download-archive || true
           done < result.log
 
       - name: Get sha1 of .ytdlarchive
