@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [BackroomsExplained, AtlasFalloutFoundation, UC1oX5agKOuINrFR5MJHe9Pw, UCNu8HuThEO-L4wpoVonFU2Q, googletoolbarhelp, DumpradioBlogspot1, MAGHREBINFO, RedFireStudiosmrt84, napabar, WolfieNumbers630000, ZaraFan2015, UCb5fSyNOOMuYiDt7wmSsPCQ, UCUwM-bgTBE5wgqlP4U6B8-A]
+        channel: [BackroomsExplained, AtlasFalloutFoundation, googletoolbarhelp, DumpradioBlogspot1, MAGHREBINFO, RedFireStudiosmrt84, napabar, WolfieNumbers630000, ZaraFan2015]
     
     steps:
       - name: Set up Python
@@ -35,7 +35,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          yt-dlp -j --no-warnings --flat-playlist "https://youtube.com/channel/${{ matrix.channel }}" | jq -r ".urls" > result.log
+          yt-dlp -j --no-warnings --flat-playlist "https://youtube.com/c/${{ matrix.channel }}" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
             tubeup $p --get-comments --use-download-archive || true
