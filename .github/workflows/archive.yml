@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [1VP9Ru2jjMgkPL_48mkzyq64Wce3aztQf, 1HECLx_mySMOhfrNEqOFXQFP0rWvYvvj1, 1fHJDLFzOE-R1FV-I-Kw2ehwaYwyy0nbT, 18_Y_bKhwxrvAJ4AnK7h2ZGgK8oyzTCw7, 1Trgf2algnIrQ94ldZfdtDn0sVV4EfZQk, 1MaG8S3tL98_KkO5s8y58LF5a2MJnv2P4, 1HguWU6kxrzcHpTbQRkdFZcoESTj3bFg4]
+        channel: [oglbsha5d6j2s3k, vwmeazi4wgpcswk]
     
     steps:
       - name: Set up Python
@@ -35,7 +35,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          tubeup "https://drive.google.com/file/d/${{ matrix.channel }}" --get-comments --use-download-archive || true
+          tubeup "https://dropbox.com/s/${{ matrix.channel }}" --get-comments --use-download-archive || true
           
 
       - name: Get sha1 of .ytdlarchive
