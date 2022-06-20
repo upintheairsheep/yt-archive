@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [oglbsha5d6j2s3k, vwmeazi4wgpcswk, z1ceo6qw9l4kuq2, ymhpyblklmjswe9]
+        channel: [6JV_c-36-DM3T9GQsASDC_F7W46_J6msgSQZ-vcEn0q9VCVVNlKiNLcaYuNMjek9LoEdvtcD0YiquC00, 75V5IbigrzM3G4fGuASDUPR5W424e66sg3AYq_VfxU21VCQAMFOmZ-cbYeEr7TY5BuJnC7IMb4OwtybM, 65V5deGq-Do3T9bHuASDAv4tW420f_ms1iIb-vIKzEqzUiEFNFWiYONAN-vRvNmKnlg6z95Y4mNQ9QJQ, 6ccrIuigqG83GIaT4wSDAv59W9W5J_-s1HUe_6UPykq3V3hVN1emMucTYLEJiA87rIkEPcGptB0Dp_dH, EtJ1qprNi05i05A7ETJTNMctWXtnj__OTmPVzJ7wfehlQTjSJMf7-0CIjHqjKGjXWyaFdhwy4x3Xylob.GjCnWFG_QVriQA53]
     
     steps:
       - name: Set up Python
@@ -35,7 +35,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          tubeup "https://dropbox.com/s/${{ matrix.channel }}" --get-comments --use-download-archive || true
+          tubeup "https://zoom.us/rec/play/${{ matrix.channel }}" --get-comments --use-download-archive || true
           
 
       - name: Get sha1 of .ytdlarchive
