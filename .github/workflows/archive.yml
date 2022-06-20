@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [BackroomsExplained, AtlasFalloutFoundation, googletoolbarhelp, DumpradioBlogspot1, MAGHREBINFO, RedFireStudiosmrt84, napabar, WolfieNumbers630000, ZaraFan2015]
+        channel: [phantom_arcade]
     
     steps:
       - name: Set up Python
@@ -35,7 +35,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          yt-dlp -j --no-warnings --flat-playlist "https://youtube.com/user/${{ matrix.channel }}" | jq -r ".urls" > result.log
+          yt-dlp -j --no-warnings --flat-playlist "https://twitch.tv/${{ matrix.channel }}/videos" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
             tubeup $p --get-comments --use-download-archive || true
