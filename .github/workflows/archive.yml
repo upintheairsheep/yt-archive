@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [phantom_arcade]
+        channel: [1VP9Ru2jjMgkPL_48mkzyq64Wce3aztQf, 1HECLx_mySMOhfrNEqOFXQFP0rWvYvvj1, 1fHJDLFzOE-R1FV-I-Kw2ehwaYwyy0nbT, 18_Y_bKhwxrvAJ4AnK7h2ZGgK8oyzTCw7, 1Trgf2algnIrQ94ldZfdtDn0sVV4EfZQk, 1MaG8S3tL98_KkO5s8y58LF5a2MJnv2P4, 1HguWU6kxrzcHpTbQRkdFZcoESTj3bFg4]
     
     steps:
       - name: Set up Python
@@ -35,7 +35,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          yt-dlp -j --no-warnings --flat-playlist "https://twitch.tv/${{ matrix.channel }}/videos?filter=all" | jq -r ".urls" > result.log
+          yt-dlp -j --no-warnings --flat-playlist "https://drive.google.com/file/d/${{ matrix.channel }}" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
             tubeup $p --get-comments --use-download-archive || true
