@@ -35,7 +35,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          tubeup "http://YouTube.com/user/{{ matrix.channel }}" --get-comments --use-download-archive || true
+          tubeup "http://YouTube.com/user/${{ matrix.channel }}" --get-comments --use-download-archive || true
           
 
       - name: Get sha1 of .ytdlarchive
