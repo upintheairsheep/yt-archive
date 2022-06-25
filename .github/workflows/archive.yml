@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [JadooTVInc, JadooPLUS]
+        channel: [UC1p1-k1Seig-ipqIZAKHloA, UCm1oQffUL6eQXf61yrLjphw]
     
     steps:
       - name: Set up Python
