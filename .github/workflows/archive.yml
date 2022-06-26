@@ -9,8 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [NewlineInteractive, UCKKmuDkqbi-xs5OHc2aOX3g, UCv4MKFMNI0n_HOtA-RjMYPA, UCOoWp6QiQBf7hCyHudQ42rw, UCdDjUbU-FRvNqMQbz6zYb_w, UCTTwTlfnX6xEeRKJxLbkXxg, UC7pZwRIyx7OVPfpfp_c81mg, UCC2oNnItlccEGlJ0TOUlhDQ, NewlineProducts, UCbWAhUI0ZjFDrH_ZCGqH7XQ, UCmP6xXL1sOXYsTWebxqowsA]
-    
+        channel: [UnderWare]
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -35,7 +34,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          yt-dlp -j --no-warnings --flat-playlist "https://youtube.com/user/${{ matrix.channel }}" | jq -r ".urls" > result.log
+          yt-dlp -j --no-warnings --flat-playlist "https://giphy.com/channel/${{ matrix.channel }}" | jq -r ".urls" > result.log
            while IFS="" read -r p || [ -n "$p" ]
            do
              tubeup $p --get-comments --use-download-archive || true
