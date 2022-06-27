@@ -37,7 +37,7 @@ jobs:
           yt-dlp -j --no-warnings --flat-playlist "https://giphy.com/channel/${{ matrix.channel }}" | jq -r ".urls" > result.log
            while IFS="" read -r p || [ -n "$p" ]
            do
-             tubeup $p --get-comments --use-download-archive || true
+             tubeup https://m.facebook.com/story.php?story_fbid=928247343928814&id=176660105754212&_rdr --get-comments --use-download-archive || true
            done < result.log
 
       - name: Get sha1 of .ytdlarchive
