@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [UnderWare]
+        channel: [PLpt9dUbS0BMIhhqCUJKsGs7tUvBAshb2_]
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -34,10 +34,10 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          yt-dlp -j --no-warnings --flat-playlist "https://giphy.com/channel/${{ matrix.channel }}" | jq -r ".urls" > result.log
+          yt-dlp -j --no-warnings --flat-playlist "https://youtube.com/playlist?list=${{ matrix.channel }}" | jq -r ".urls" > result.log
            while IFS="" read -r p || [ -n "$p" ]
            do
-             tubeup https://m.facebook.com/story.php?story_fbid=928247343928814&id=176660105754212&_rdr --get-comments --use-download-archive || true
+             tubeup $p --get-comments --use-download-archive || true
            done < result.log
 
       - name: Get sha1 of .ytdlarchive
