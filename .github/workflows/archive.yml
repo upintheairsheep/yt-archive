@@ -33,12 +33,8 @@ jobs:
           IA_EMAIL: ${{ secrets.IA_EMAIL }}
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
-          ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-#           yt-dlp -j --no-warnings --flat-playlist "https://dropbox.com/s/${{ matrix.channel }}" | jq -r ".urls" > result.log
-#           while IFS="" read -r p || [ -n "$p" ]
-#           do  
+          ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"  
           tubeup https://dropbox.com/s/${{ matrix.channel }} --get-comments --use-download-archive || true
-#           done < result.log
 
       - name: Get sha1 of .ytdlarchive
         id: sha1
