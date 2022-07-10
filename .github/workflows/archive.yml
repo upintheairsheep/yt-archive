@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [PLYb3oz5KavKmsrZDAhs8I5Bb0diKnuTWn, PL3wzueQts4CkbCNPwV8u3QodTT8WHJp_K, PLpt9dUbS0BMIhhqCUJKsGs7tUvBAshb2_]
+        channel: [PLNKZmD4pdb_oAQIXm6asWkn5pCjplGrIe]
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
