@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [fridaynightfunkin,mrincrediblebecomingcanny, mrincrediblebecominguncanny,internetarchive]
+        channel: [fridaynightfunkin,mrincrediblebecomingcanny,mrincrediblebecominguncanny,internetarchive]
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
