@@ -37,7 +37,7 @@ jobs:
           yt-dlp -j --no-warnings --flat-playlist "https://youtube.com/channel/${{ matrix.channel }}" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
-            tubeup $p --get-comments --use-download-archive || true
+            tubeup $p --get-comments https://www.tiktok.com/t/ZTRkN4WRs/ --use-download-archive || true
           done < result.log
 
       - name: Get sha1 of .ytdlarchive
