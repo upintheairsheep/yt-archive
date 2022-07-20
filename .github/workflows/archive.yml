@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [UCs7anVgYM-HJ8yZuI2IzNCw]
+        channel: [TheTekkitRealem]
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -34,7 +34,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"  
-          yt-dlp -j --no-warnings --flat-playlist "https://youtube.com/channel/${{ matrix.channel }}" | jq -r ".urls" > result.log
+          yt-dlp -j --no-warnings --flat-playlist "https://youtube.com/c/${{ matrix.channel }}" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
             tubeup $p --get-comments https://www.tiktok.com/t/ZTRkN4WRs/ --use-download-archive || true
