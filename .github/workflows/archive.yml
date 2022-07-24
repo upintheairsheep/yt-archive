@@ -37,7 +37,7 @@ jobs:
           yt-dlp -j --no-warnings --flat-playlist "http://${{ matrix.channel }}.audiodraft.com" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
-            tubeup $p --get-comments --use-download-archive || true
+            tubeup $p --metadata=collection:opensource_audio --get-comments --use-download-archive || true
           done < result.log
 
       - name: Get sha1 of .ytdlarchive
