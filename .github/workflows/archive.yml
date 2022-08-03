@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [nokiatune]
+        channel: [1D_wlyJ4OMP16bLug64e1XcLuA4hSekru]
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -34,10 +34,10 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"  
-          yt-dlp -j --no-warnings --flat-playlist "http://${{ matrix.channel }}.audiodraft.com" | jq -r ".urls" > result.log
+          yt-dlp -j --no-warnings --flat-playlist "https://drive.google.com/drive/u/0/folders/${{ matrix.channel }}" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
-            tubeup $p https://drive.google.com/drive/u/0/folders/1D_wlyJ4OMP16bLug64e1XcLuA4hSekru?usp=sharing --get-comments --use-download-archive || true
+            tubeup $p --get-comments --use-download-archive || true
           done < result.log
 
       - name: Get sha1 of .ytdlarchive
