@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [1D_wlyJ4OMP16bLug64e1XcLuA4hSekru]
+        channel: [PLYb3oz5KavKnVix-TEuQOTqBSnhFtGcCC, PLydrr6n7sWCO-JG9b0RDp1JauEvyGqQ1G, PLJuLI19tA94380ixPhe0WgMBFJMaEw2XF, PLGH7Iw5zzW1BVBegGU4ODfGkzWSrw8axl, PLit-FroGXXbNm7AxQo3m-qp4UipCArIiW, PLkg004PNuCfwriQilILRF_LDIvQKwmB-I]
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -34,7 +34,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"  
-          yt-dlp -j --no-warnings --flat-playlist "https://drive.google.com/drive/u/0/folders/${{ matrix.channel }}" | jq -r ".urls" > result.log
+          yt-dlp -j --no-warnings --flat-playlist "https://youtube.com/playlist?list=${{ matrix.channel }}" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
             tubeup $p --get-comments --use-download-archive || true
