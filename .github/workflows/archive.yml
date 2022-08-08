@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [windows, android, google, microsoft, afrojer, instagram, tiktok, meta, Facebook, twitter, appletimemachine]
+        channel: [windows, android, google, microsoft, afrojer, instagram, tiktok, meta, Facebook, twitter, appletimemachine, Minecraft, ninjamuffin99, phantomarcade, amazon]
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
