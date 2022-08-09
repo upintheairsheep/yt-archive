@@ -34,7 +34,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"  
-          tubeup https://pbs.twimg.com/media/FZkyUldWAAEJ13a?format=jpg&name=900x900 https://pbs.twimg.com/media/Ewe9sRiUcAAVUbT?format=jpg&name=900x900
+          tubeup https://media.discordapp.net/attachments/973314182395080724/1002330958701281290/trim.514C51C4-1514-402C-9D82-7F48688A66FD.mp4
           yt-dlp -j --no-warnings --flat-playlist "https://instagram.com/${{ matrix.channel }}" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
