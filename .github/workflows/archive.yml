@@ -34,7 +34,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"  
-          tubeup https://www.reddit.com/r/backrooms/comments/ivzo3t/if_you_trip_in_the_snackrooms_in_the_backrooms/ --ignore-item-check
+          tubeup https://mobile.twitter.com/CocaCola/status/1542855566648901632 https://pbs.twimg.com/media/FZkyUldWAAEJ13a?format=jpg&name=900x900 https://mobile.twitter.com/harbenie/status/1371291284179095554 https://mobile.twitter.com/SonicFreak94/status/1544176542128824320 https://mobile.twitter.com/Dublicus/status/1546202785061842944 https://mobile.twitter.com/WtfImgvids/status/1471147438979309575 https://mobile.twitter.com/jeb_beanzos/status/1556235722935242752 https://mobile.twitter.com/Ender_Bot/status/1556199193902862336 https://pbs.twimg.com/media/Ewe9sRiUcAAVUbT?format=jpg&name=900x900
           yt-dlp -j --no-warnings --flat-playlist "https://instagram.com/${{ matrix.channel }}" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
