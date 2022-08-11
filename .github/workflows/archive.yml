@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [windows]
+        channel: [windows, dapper-husky, kayvonkamyar]
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
