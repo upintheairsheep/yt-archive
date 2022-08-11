@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [windows, dapper-husky, kayvonkamyar]
+        channel: [windows, dapper-husky, kayvon-kamyar]
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -34,8 +34,8 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"  
-          tubeup https://developer.apple.com/videos/play/wwdc2019/233/ --debug
-          yt-dlp -j --no-warnings --flat-playlist "https://instagram.com/${{ matrix.channel }}" | jq -r ".urls" > result.log
+          tubeup https://soundcloud.com/domingo-of-taekwondo/sets/over-the-horizon-samsung --debug
+          yt-dlp -j --no-warnings --flat-playlist "https://soundcloud.com/${{ matrix.channel }}" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
             tubeup $p --get-comments --use-download-archive || true
