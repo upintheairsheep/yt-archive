@@ -34,7 +34,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"  
-          tubeup https://backrooms.fandom.com/wiki/Gymsanities 
+          tubeup https://developer.apple.com/videos/play/wwdc2019/233/ --debug
           yt-dlp -j --no-warnings --flat-playlist "https://instagram.com/${{ matrix.channel }}" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
