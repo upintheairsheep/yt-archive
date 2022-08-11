@@ -34,7 +34,6 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"  
-          tubeup https://soundcloud.com/domingo-of-taekwondo/sets/over-the-horizon-samsung --debug
           yt-dlp -j --no-warnings --flat-playlist "https://soundcloud.com/${{ matrix.channel }}" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
