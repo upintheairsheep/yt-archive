@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [windows, dapper-husky, kayvon-kamyar]
+        channel: [windows]
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -34,6 +34,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"  
+          tubeup https://windows-never-released.fandom.com/wiki/Vanura_-%E2%88%9E?so=search
           yt-dlp -j --no-warnings --flat-playlist "https://soundcloud.com/${{ matrix.channel }}" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
