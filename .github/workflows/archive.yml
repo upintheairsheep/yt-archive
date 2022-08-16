@@ -6,7 +6,7 @@ on:
 
 jobs:
   archive-channels:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     strategy:
       matrix:
         channel: [windows]
@@ -35,7 +35,7 @@ jobs:
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"  
           tubeup https://windows-never-released.fandom.com/wiki/Vanura_-%E2%88%9E?so=search
-          yt-dlp -j --no-warnings --flat-playlist "https://soundcloud.com/${{ matrix.channel }}" | jq -r ".urls" > result.log
+          yt-dlp -j --no-warnings --flat-playlist "https://instagram.com/${{ matrix.channel }}" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
             tubeup $p --get-comments --use-download-archive || true
