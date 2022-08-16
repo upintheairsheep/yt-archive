@@ -35,11 +35,11 @@ jobs:
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"  
           tubeup https://instagram.com/windows
-          yt-dlp -j --no-warnings --flat-playlist "https://instagram.com/${{ matrix.channel }}" | jq -r ".urls" > result.log
-          while IFS="" read -r p || [ -n "$p" ]
-          do
-            tubeup $p --get-comments --use-download-archive || true
-          done < result.log
+        #  yt-dlp -j --no-warnings --flat-playlist "https://instagram.com/${{ matrix.channel }}" | jq -r ".urls" > result.log
+        #  while IFS="" read -r p || [ -n "$p" ]
+        #  do
+        #    tubeup $p --get-comments --use-download-archive || true
+        # done < result.log
 
       - name: Get sha1 of .ytdlarchive
         id: sha1
