@@ -6,7 +6,7 @@ on:
 
 jobs:
   archive-channels:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         channel: [windows]
