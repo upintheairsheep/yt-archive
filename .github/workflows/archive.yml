@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [UCgdOYk-fveiB3j2vfqapn7w, SkyAnimations]
+        channel: [windows, UCgdOYk-fveiB3j2vfqapn7w, SkyAnimations]
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -35,7 +35,7 @@ jobs:
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"  
           tubeup https://instagram.com/windows
-        #  yt-dlp -j --no-warnings --flat-playlist "https://youtube.com/channel/${{ matrix.channel }}" | jq -r ".urls" > result.log
+        #  yt-dlp -j --no-warnings --flat-playlist "https://instagram.com/${{ matrix.channel }}" | jq -r ".urls" > result.log
         #  while IFS="" read -r p || [ -n "$p" ]
         #  do
         #    tubeup $p --get-comments --use-download-archive || true
