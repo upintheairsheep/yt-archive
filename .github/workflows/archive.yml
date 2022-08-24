@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [windows, UCgdOYk-fveiB3j2vfqapn7w, SkyAnimations]
+        channel: [pwrtankman]
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -21,7 +21,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install yt-dlp internetarchive tubeup
           mkdir -p ~/.tubeup
-
       - uses: actions/cache@v3
         id: cache
         with:
@@ -34,13 +33,11 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"  
-          tubeup https://instagram.com/windows
-        #  yt-dlp -j --no-warnings --flat-playlist "https://instagram.com/${{ matrix.channel }}" | jq -r ".urls" > result.log
-        #  while IFS="" read -r p || [ -n "$p" ]
-        #  do
-        #    tubeup $p --get-comments --use-download-archive || true
-        # done < result.log
-
+          yt-dlp -j --no-warnings --flat-playlist "https://twitch.tv/${{ matrix.channel }}/videos?filter=archives" | jq -r ".urls" > result.log
+          while IFS="" read -r p || [ -n "$p" ]
+          do
+            tubeup $p --get-comments --use-download-archive || true
+          done < result.log
       - name: Get sha1 of .ytdlarchive
         id: sha1
         run: |
