@@ -33,7 +33,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"  
-          tubeup https://news.samsung.com/global/samsungs-over-the-horizon-gets-digitally-re-worked-by-elementary-school-students-in-the-netherlands https://news.samsung.com/global/over-the-horizon-the-evolution-of-the-samsung-galaxy-brand-sound 
+          tubeup https://youtu.be/4qOHfaa0fw4 --get-comments --debug
           yt-dlp -j --no-warnings --flat-playlist "https://twitch.tv/${{ matrix.channel }}/videos?filter=archives" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
