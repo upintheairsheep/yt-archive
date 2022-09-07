@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [pwrtankman]
+        channel: [Apple]
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -33,8 +33,8 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"  
-          tubeup https://mobile.twitter.com/Joshuajered/status/1507366705604923394?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1507366705604923394%7Ctwgr%5Ee868e2125eb945e019e45a98198d646e4f0f585a%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fwww.duniyarlabari.com%2F2022%2F03%2F14-year-old-falls-off-430-ft-ride.html --get-comments --debug
-          yt-dlp -j --no-warnings --flat-playlist "https://twitch.tv/${{ matrix.channel }}/videos?filter=archives" | jq -r ".urls" > result.log
+         
+          yt-dlp -j --no-warnings --flat-playlist "https://youtube.com/user/${{ matrix.channel }}" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
             tubeup $p --get-comments --use-download-archive || true
