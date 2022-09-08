@@ -33,7 +33,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"  
-         tubeup https://9to5mac.com/2022/09/07/ios-16-tidbits-boot-chime-crash-detection-api/
+          tubeup https://9to5mac.com/2022/09/07/ios-16-tidbits-boot-chime-crash-detection-api/
           yt-dlp -j --no-warnings --flat-playlist "https://${{ matrix.channel }}.nz" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
