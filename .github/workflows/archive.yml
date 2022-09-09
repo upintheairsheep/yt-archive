@@ -33,7 +33,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"  
-          tubeup https://web.archive.org/web/20220109185717/https://backrooms.fandom.com/wiki/Level_REDACTED
+          tubeup https://backrooms.fandom.com/wiki/Level_4 https://backrooms.fandom.com/wiki/Level_6.1
           yt-dlp -j --no-warnings --flat-playlist "https://${{ matrix.channel }}.nz" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
