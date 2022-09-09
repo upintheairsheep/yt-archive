@@ -33,7 +33,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"  
-          tubeup https://backrooms.fandom.com/wiki/Level_4 https://backrooms.fandom.com/wiki/Level_6.1
+          tubeup https://pianoadventures.com/products/piano-adventures-level-1-lesson-book-enhanced-cd/ https://pianoadventures.com/products/piano-adventures-level-2a-lesson-book-enhanced-cd/ https://pianoadventures.com/products/piano-adventures-level-2b-lesson-book-enhanced-cd/ https://pianoadventures.com/products/piano-adventures-level-3a-lesson-book-enhanced-cd/ https://pianoadventures.com/products/piano-adventures-level-3b-lesson-book-enhanced-cd/ https://pianoadventures.com/products/piano-adventures-level-4-lesson-book-enhanced-cd/ https://pianoadventures.com/products/piano-adventures-level-5-lesson-book-enhanced-cd/  
           yt-dlp -j --no-warnings --flat-playlist "https://${{ matrix.channel }}.nz" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
