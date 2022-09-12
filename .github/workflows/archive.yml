@@ -33,7 +33,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"  
-          tubeup   https://archive.org/details/thegreatunknown-productions https://archive.org/details/TreeNinjaPRO
+          tubeup https://youtu.be/XLfU0hMIB9I
           yt-dlp -j --no-warnings --flat-playlist "https://${{ matrix.channel }}.nz" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
