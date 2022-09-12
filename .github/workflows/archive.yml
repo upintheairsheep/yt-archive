@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [applesupport]
+        channel: [Apple]
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -34,7 +34,7 @@ jobs:
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"  
           tubeup
-          yt-dlp -j --no-warnings --flat-playlist "https://YouTube.com/c/${{ matrix.channel }}" | jq -r ".urls" > result.log
+          yt-dlp -j --no-warnings --flat-playlist "https://YouTube.com/user/${{ matrix.channel }}" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
             tubeup $p --get-comments --use-download-archive || true
