@@ -34,7 +34,9 @@ jobs:
           IA_EMAIL: ${{ secrets.IA_EMAIL }}
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
-          ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
+          ia configure
+          "$IA_EMAIL"
+          "$IA_PASSWORD"
           iagitup https://github.com/jadootv/support
       
       - name: Get sha1 of .ytdlarchive
