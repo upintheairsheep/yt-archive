@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [applesupport]
+        channel: [lgtv]
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -39,8 +39,7 @@ jobs:
           do
             tubeup $p --get-comments --use-download-archive || true
           done < result.log
-          tubeup https://www.youtube.com/channel/UCWo85sD8CPRzKyGIFjURyZw --get-comments
-          tubeup https://youtube.com/user/Apple
+      
       - name: Get sha1 of .ytdlarchive
         id: sha1
         run: |
