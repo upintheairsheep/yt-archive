@@ -21,6 +21,7 @@ jobs:
           git clone -v https://github.com/gdamdam/iagitup.git
           cd iagitup
           pip install . -v
+          pip install internetarchive -v
           mkdir -p ~/.iagitup
       - uses: actions/cache@v3
         id: cache
