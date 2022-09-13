@@ -1,0 +1,42 @@
+
+
+on:
+  schedule:
+    # run every 40th minute of every hour
+    - cron:  '0 14 * * 1'
+  workflow_dispatch:
+
+jobs:
+  archive-wikis:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '2.7'
+
+     
+      - name: Install dependencies
+        run: |
+          git clone https://github.com/gdamdam/iagitup.git
+          cd iagitup
+          pip install .
+          mkdir -p ~/.iagitup
+      - uses: actions/cache@v3
+        id: cache
+        with:
+          path: '~/.iagitup'
+          
+      - name: Download and upload GitHub
+        env: 
+          IA_EMAIL: ${{ secrets.IA_EMAIL }}
+          IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
+        run: |
+          ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"   
+          iagitup https://github.com/jadootv/support
+      
+      - name: Get sha1 of .ytdlarchive
+        id: sha1
+        run: |
+          export BRAP=$(cat ~/.tubeup/.ytdlarchive | shasum - | head -c 40)
+          echo '::set-output name=sha1::$BRAP'
