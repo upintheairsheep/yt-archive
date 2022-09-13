@@ -33,9 +33,9 @@ jobs:
           IGP: ${{ secrets.INSTA_PASS}}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"   
-          instaup --login themariocrafter
+          instaup jadootv --login themariocrafter
           "$IGP"   
-          instaup jadootv
+          
       
       - name: Get sha1
         id: sha1
