@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  archive-repos:
+  archive-profiles:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Python
@@ -18,16 +18,13 @@ jobs:
      
       - name: Install dependencies
         run: |
-          git clone -v https://github.com/gdamdam/iagitup.git
-          cd iagitup
-          pip install . -v
-          pip install internetarchive -v
-          mkdir -p ~/.iagitup
+          pip install instaup -v
+          mkdir -p ~/.instaup
       - uses: actions/cache@v3
         id: cache
         with:
-          path: '~/.iagitup'
-          key: poop
+          path: '~/.instaup'
+          key: pee
           
       - name: Download and upload GitHub
         env: 
@@ -37,7 +34,7 @@ jobs:
           ia configure
           "$IA_EMAIL"
           "$IA_PASSWORD"
-          iagitup https://github.com/jadootv/support
+          instaup 
       
       - name: Get sha1
         id: sha1
