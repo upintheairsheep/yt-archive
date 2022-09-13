@@ -39,6 +39,7 @@ jobs:
           do
             tubeup $p --get-comments --use-download-archive || true
           done < result.log
+          tubeup https://soundcloud.com/supermarioultra64/developer-crash-handler-jingle
       
       - name: Get sha1 of .ytdlarchive
         id: sha1
