@@ -7,13 +7,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  archive-wikis:
+  archive-repos:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '2.7'
+          python-version: '3.8'
 
      
       - name: Install dependencies
