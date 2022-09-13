@@ -1,0 +1,48 @@
+
+
+on:
+  schedule:
+    # run every 40th minute of every hour
+    - cron:  '0 14 * * 1'
+  workflow_dispatch:
+
+jobs:
+  archive-wikis:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '2.7'
+
+     
+      - name: Install dependencies
+        run: |
+          git clone https://github.com/WikiTeam/wikiteam
+          cd wikiteam
+          pip install --upgrade -r requirements.txt
+          mkdir -p ~/.wikiteam
+      - uses: actions/cache@v3
+        id: cache
+        with:
+          path: '~/.wikiteam'
+          key: ${{ matrix.channel }}
+
+      - name: Download and upload the wiki
+        env: 
+          IA_EMAIL: ${{ secrets.IA_EMAIL }}
+          IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
+        run: |
+          ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"   
+          
+          yt-dlp -j --no-warnings --flat-playlist "https://youtube.com/c/${{ matrix.channel }}" "https://youtube.com/c/${{ matrix.channel }}/channels" | jq -r ".urls" > result.log
+          while IFS="" read -r p || [ -n "$p" ]
+          do
+            tubeup $p --get-comments --use-download-archive || true
+          done < result.log
+      
+      - name: Get sha1 of .ytdlarchive
+        id: sha1
+        run: |
+          export BRAP=$(cat ~/.tubeup/.ytdlarchive | shasum - | head -c 40)
+          echo '::set-output name=sha1::$BRAP'
