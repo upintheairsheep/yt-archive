@@ -31,10 +31,10 @@ jobs:
           IA_EMAIL: ${{ secrets.IA_EMAIL }}
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
-          ia configure
-          "$IA_EMAIL"
-          "$IA_PASSWORD"
-          instaup 
+          ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"   
+          instaup --login themariocrafter
+          "$IGP"   
+         
       
       - name: Get sha1
         id: sha1
