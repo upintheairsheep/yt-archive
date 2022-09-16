@@ -32,7 +32,8 @@ jobs:
           IA_EMAIL: ${{ secrets.IA_EMAIL }}
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
-          ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"   
+          ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
+          tubeup http://www.youtube.com/channel/UCH021KD6fC0Pd_EFCaIfaEA --get-comments
           yt-dlp -j --no-warnings --flat-playlist "https://youtube.com/c/${{ matrix.channel }}" "https://youtube.com/c/${{ matrix.channel }}/channels" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
