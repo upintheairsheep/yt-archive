@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [Samsung, globalLG]
+        channel: [SamsungglobalLG]
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -33,6 +33,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
+          tubeup https://dl.dropbox.com/s/unph3z6m58rkiyf/UFED%20Touch%202%20-%202015%20Patch%20Set%20Factory%20State%20%28v7%29%20-%20%20SD8SN8U128G.7z?dl=0
           yt-dlp -j --datebefore 20160101 --no-warnings --flat-playlist "https://youtube.com/c/${{ matrix.channel }}" "https://youtube.com/c/${{ matrix.channel }}/channels" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
