@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [Samsung, globalLG]
+        channel: [Samsung, Apple, Google, Android, ninja_muffin99, PhantomArcade3K, KawaiSprite, globalLG]
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -33,7 +33,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          snscrape twitter-user  > result.log
+          snscrape twitter-user ${{ matrix.channel }} > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
             tubeup $p --get-comments --use-download-archive || true
