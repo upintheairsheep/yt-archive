@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install yt-dlp internetarchive tubeup
+          pip install yt-dlp internetarchive tubeup snscrape
           mkdir -p ~/.tubeup
       - uses: actions/cache@v3
         id: cache
@@ -33,10 +33,10 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          yt-dlp --no-warnings https://youtube.com/c/${{ matrix.channel }} https://youtube.com/c/${{ matrix.channel }}/channels -O id https://youtube.com/channel/UClCsuIaXkKxN9Q1lrWvP-mg > result.log
+          snscrape twitter-user  > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
-            tubeup youtu.be/$p --get-comments --use-download-archive || true
+            tubeup $p --get-comments --use-download-archive || true
           done < result.log
           
       
