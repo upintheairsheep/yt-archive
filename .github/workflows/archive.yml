@@ -33,7 +33,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          yt-dlp --no-warnings https://youtube.com/c/${{ matrix.channel }} https://youtube.com/c/${{ matrix.channel }}/channels -O id > result.log
+          yt-dlp --no-warnings https://youtube.com/c/${{ matrix.channel }} https://youtube.com/c/${{ matrix.channel }}/channels -O id https://youtube.com/channel/UClCsuIaXkKxN9Q1lrWvP-mg > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
             tubeup youtu.be/$p --get-comments --use-download-archive || true
