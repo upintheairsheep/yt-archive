@@ -33,10 +33,10 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          yt-dlp -j --datebefore 20150101 --no-warnings --flat-playlist "https://youtube.com/c/${{ matrix.channel }}" "https://youtube.com/c/${{ matrix.channel }}/channels" | jq -r ".urls" > result.log
+          yt-dlp --datebefore 20150101 --no-warnings --flat-playlist "https://youtube.com/c/${{ matrix.channel }}" "https://youtube.com/c/${{ matrix.channel }}/channels" -O id
           while IFS="" read -r p || [ -n "$p" ]
           do
-            tubeup $p --get-comments --use-download-archive || true
+            tubeup youtu.be/$p --get-comments --use-download-archive || true
           done < result.log
           
       
