@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [Samsung, Apple, Google, Android, ninja_muffin99, PhantomArcade3K, KawaiSprite, globalLG]
+        channel: [Samsung, globalLG]
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install yt-dlp internetarchive tubeup snscrape
+          pip install yt-dlp internetarchive tubeup
           mkdir -p ~/.tubeup
       - uses: actions/cache@v3
         id: cache
@@ -33,7 +33,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          snscrape twitter-user ${{ matrix.channel }} > result.log
+          yt-dlp -j --datebefore 20150101 --no-warnings --flat-playlist "https://youtube.com/c/${{ matrix.channel }}" "https://youtube.com/c/${{ matrix.channel }}/channels" --get-id > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
             tubeup $p --get-comments --use-download-archive || true
