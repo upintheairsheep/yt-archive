@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [CentralFlordiaFuture]
+        channel: [Samsung, globalLG]
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -32,8 +32,8 @@ jobs:
           IA_EMAIL: ${{ secrets.IA_EMAIL }}
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
-          ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          yt-dlp -j --no-warnings --flat-playlist "https://youtube.com/user/${{ matrix.channel }}" "https://youtube.com/user/${{ matrix.channel }}/channels" --get-id > result.log
+          ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"   
+          yt-dlp -j --no-warnings --flat-playlist "https://youtube.com/c/${{ matrix.channel }}" "https://youtube.com/c/${{ matrix.channel }}/channels" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
             tubeup $p --get-comments --use-download-archive || true
