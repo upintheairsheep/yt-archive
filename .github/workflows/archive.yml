@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [Samsung, globalLG, SAMSUNGMOBILEUK, SamsungSwitzerland, samsungaustria, SamsungTubeRomania, SamsungGreece, czsamsung, SamsungZrt, SamsungBulgaria, NLSamsungMobile, SamsungSrbija, SamsungLV, SamsungLietuva, SamsungHrvatska, SamsungHongKong, samsungpolska, UCAKTynXMzOva5oThB6eEczw, SamsungMobileSpain, SamsungGermany, samsungturkiye, SamsungCanada, samsungindonesia, Samsungmobileindia, SamsungMobileFrance, UCH-6ZJmpn-gspj_HBo4hBsA,  SamsungEesti, SamsungShqiperi, SamsungMakedonija, OfficalSamsungBIH, SamsungCrnaGora, SamsungMalaysia, SamsungPortugal, SamsungPakistan samsungmobileusa]
+        channel: [Samsung, globalLG, SAMSUNGMOBILEUK, SamsungSwitzerland, samsungaustria, SamsungTubeRomania, SamsungGreece, czsamsung, SamsungZrt, SamsungBulgaria, NLSamsungMobile, SamsungSrbija, SamsungLV, SamsungLietuva, SamsungHrvatska, SamsungHongKong, samsungpolska, UCAKTynXMzOva5oThB6eEczw, SamsungMobileSpain, SamsungGermany, samsungturkiye, SamsungCanada, samsungindonesia, Samsungmobileindia, SamsungMobileFrance, UCH-6ZJmpn-gspj_HBo4hBsA,  SamsungEesti, SamsungShqiperi, SamsungMakedonija, OfficalSamsungBIH, SamsungCrnaGora, SamsungMalaysia, SamsungPortugal, SamsungPakistan, samsungphilippines, twsamsung, SamsungSingapore, samsungnewzealand, SamsungLEVANT, SamsungLatin, samsungmobileco, SamsungPeru, SamsungUkraine,  TheSamsungSaudi, SamsungIsrael, SamsungMorocco, SamsungArgentina, SamsungEgypt, SamsungMobileArabia, samsungmobileusa]
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
