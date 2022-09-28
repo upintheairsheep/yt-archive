@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [Samsung, globalLG, SamsungTomorrow, SamsungMobileKorea,  SAMSUNGMOBILEUK, SamsungSwitzerland, samsungaustria, SamsungTubeRomania, SamsungGreece, czsamsung, SamsungZrt, SamsungBulgaria, NLSamsungMobile, SamsungSrbija, SamsungLV, SamsungLietuva, SamsungHrvatska, SamsungHongKong, samsungpolska, UCAKTynXMzOva5oThB6eEczw, SamsungMobileSpain, SamsungGermany, samsungturkiye, SamsungCanada, samsungindonesia, Samsungmobileindia, SamsungMobileFrance, UCH-6ZJmpn-gspj_HBo4hBsA,  SamsungEesti, SamsungShqiperi, SamsungMakedonija, OfficialSamsungBIH, SamsungCrnaGora, SamsungMalaysia, SamsungPortugal, SamsungPakistan, samsungphilippines, twsamsung, SamsungSingapore, samsungnewzealand, SamsungLEVANT, SamsungLatin, samsungmobileco, SamsungPeru, SamsungUkraine,  TheSamsungSaudi, SamsungIsrael, SamsungMorocco, SamsungArgentina, SamsungEgypt, SamsungMobileArabia, SamsungGhanaOnline, samsungblog, samsungmobileusa]
+        channel: [UCrIAnDo3VuWex3fywkGpB1g, UC55-bp-O5712zdlbU40sL4g, UCwiozDEiGSwecls_q_5qIYw, ExperienceLG, LGCanada, LGBlogFR, LGspain, LGlifesgoodPortugal, LGItalia, LGElectronicsAustria, LGMagyarorszag, LGHrvatska, LGSrbija, LGBulgaria, lghellas, lgexplore, lgczech, LGElectronics, LGMobileHQ, UCAxuf-vrbVcjqnMXL4bccgA,  UCTRwWQh2agj17vllx9Xc72Q, UCp481MCNVXV3CfmmI_oUq8w, UCjutSCve0ROVkHX9MTFgkvg,  UCLOfTxvgf3gmHzA6QRpYIJQ, LGSAE, lgmobileindonesia, LGUSAMobile, theofficalLGgirl, LGMobileVietnam, lifesgoodlab, LGteamcanada]
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -33,7 +33,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"   
-          yt-dlp -j --datebefore 20180101 --no-warnings --playlist-reverse --flat-playlist "https://youtube.com/channel/${{ matrix.channel }}" | jq -r ".urls" > result.log
+          yt-dlp -j --datebefore 20180101 --no-warnings --playlist-reverse --flat-playlist "https://youtube.com/c/${{ matrix.channel }}" "https://youtube.com/channel/${{ matrix.channel }}" "https://youtube.com/user/${{ matrix.channel }}" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
             tubeup $p --get-comments --use-download-archive || true
