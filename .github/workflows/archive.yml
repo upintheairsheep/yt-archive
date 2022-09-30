@@ -33,7 +33,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"   
-          yt-dlp -j --no-warnings --playlist-reverse --flat-playlist "https://youtube.com/c/${{ matrix.channel }}" "https://youtube.com/channel/${{ matrix.channel }}" "https://youtube.com/user/${{ matrix.channel }}" | jq -r ".urls" > result.log
+          yt-dlp -j -i --no-warnings --playlist-reverse --flat-playlist "https://youtube.com/c/${{ matrix.channel }}" "https://youtube.com/channel/${{ matrix.channel }}" "https://youtube.com/user/${{ matrix.channel }}" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
             tubeup $p --get-comments --use-download-archive || true
