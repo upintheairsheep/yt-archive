@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [Samsung, globalLG, SamsungTomorrow, SamsungMobileKorea, SAMSUNGMOBILEUK, SamsungSwitzerland, samsungaustria, SamsungTubeRomania, SamsungGreece, czsamsung, SamsungZrt, SamsungBulgaria, NLSamsungMobile, SamsungSrbija, SamsungLV, SamsungLietuva, SamsungHrvatska, SamsungHongKong, samsungpolska, UCAKTynXMzOva5oThB6eEczw, SamsungMobileSpain, SamsungGermany, samsungturkiye, SamsungCanada, samsungindonesia, Samsungmobileindia, SamsungMobileFrance, UCH-6ZJmpn-gspj_HBo4hBsA, SamsungEesti, SamsungShqiperi, SamsungMakedonija, OfficialSamsungBIH, SamsungCrnaGora, SamsungMalaysia, SamsungPortugal, SamsungPakistan, samsungphilippines, twsamsung, SamsungSingapore, samsungnewzealand, SamsungLEVANT, SamsungLatin, samsungmobileco, SamsungPeru, SamsungUkraine, TheSamsungSaudi, SamsungIsrael, SamsungMorocco, SamsungArgentina, SamsungEgypt, SamsungMobileArabia, SamsungGhanaOnline, samsungblog, samsungmobileusa]
+        channel: [JadooTVInc, UCm1oQffUL6eQXf61yrLjphw, JadooPLUS, UCIiwASN0EEvAZRb6LHRePNg, NewlineInteractive, UCKKmuDkqbi-xs5OHc2aOX3g, UCEx447yGZthKiQUnP8xfMkg, UCBp8t3L0v9DI4FSTBhgD_RA, MyGicaTV, geniatech]
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -33,7 +33,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"   
-          yt-dlp -j --datebefore 20180101 -I 100 --no-warnings --playlist-reverse --flat-playlist "https://youtube.com/c/${{ matrix.channel }}" "https://youtube.com/channel/${{ matrix.channel }}" "https://youtube.com/user/${{ matrix.channel }}" | jq -r ".urls" > result.log
+          yt-dlp -j --no-warnings --playlist-reverse --flat-playlist "https://youtube.com/c/${{ matrix.channel }}" "https://youtube.com/channel/${{ matrix.channel }}" "https://youtube.com/user/${{ matrix.channel }}" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
             tubeup $p --get-comments --use-download-archive || true
