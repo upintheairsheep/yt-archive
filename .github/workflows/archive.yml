@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install yt-dlp internetarchive tubeup
+          pip install yt-dlp internetarchive tubeup==0.0.33
           mkdir -p ~/.tubeup
       - uses: actions/cache@v3
         id: cache
