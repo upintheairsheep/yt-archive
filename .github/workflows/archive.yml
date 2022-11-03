@@ -35,10 +35,9 @@ jobs:
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
           tubeup --get-comments https://www.dropbox.com/s/2eajtndrmldxyt6/NT85.avi?dl=0
-          seq 6239 | while read OUTPUT
+          for i in {1..6239}
           do
-           let COUNTER++
-           tubeup http://nokiatune.audiodraft.com/entry/"$COUNTER" --metadata=collection:opensource_audio 
+           tubeup http://nokiatune.audiodraft.com/entry/"$i" --metadata=collection:opensource_audio 
           done
           yt-dlp -j --no-warnings -i --flat-playlist "https://youtube.com/c/${{ matrix.channel }}/channels"| jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
