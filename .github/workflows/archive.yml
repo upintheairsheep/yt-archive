@@ -34,7 +34,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"   
-          tubeup --get-comments https://youtube.com/user/lionage2002 https://youtube.com/user/peanuttia https://youtube.com/user/cgroom14 https://youtube.com/user/emoie678 https://youtube.com/user/xxxtooemo4youxx https://youtube.com/user/amihpornot
+          tubeup --get-comments https://youtube.com/user/BikeTemecula https://youtube.com/user/lionage2002 https://youtube.com/user/peanuttia https://youtube.com/user/cgroom14 https://youtube.com/user/emoie678 https://youtube.com/user/xxxtooemo4youxx https://youtube.com/user/amihpornot
           yt-dlp -j --no-warnings -i --flat-playlist "https://youtube.com/c/${{ matrix.channel }}/channels"| jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
