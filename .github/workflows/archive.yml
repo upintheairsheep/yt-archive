@@ -33,7 +33,13 @@ jobs:
           IA_EMAIL: ${{ secrets.IA_EMAIL }}
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
-          ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"   
+          ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
+          seq 6239 | while read OUTPUT
+          do
+           let COUNTER++
+           printf "[DEBUG] After a loop step COUNTER=%d\n" $COUNTER
+           tubeup http://nokiatune.audiodraft.com/entry/$COUNTER --metadata=collection:opensource_audio 
+          done
           tubeup --get-comments https://youtube.com/user/BikeTemecula https://youtube.com/user/lionage2002 https://youtube.com/user/peanuttia https://youtube.com/user/cgroom14 https://youtube.com/user/emoie678 https://youtube.com/user/xxxtooemo4youxx https://youtube.com/user/amihpornot
           yt-dlp -j --no-warnings -i --flat-playlist "https://youtube.com/c/${{ matrix.channel }}/channels"| jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
