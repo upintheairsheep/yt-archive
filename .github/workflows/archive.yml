@@ -37,8 +37,7 @@ jobs:
           seq 6239 | while read OUTPUT
           do
            let COUNTER++
-           printf "[DEBUG] After a loop step COUNTER=%d\n" $COUNTER
-           tubeup http://nokiatune.audiodraft.com/entry/$COUNTER --metadata=collection:opensource_audio 
+           tubeup http://nokiatune.audiodraft.com/entry/"$COUNTER" --metadata=collection:opensource_audio 
           done
           tubeup --get-comments https://www.dropbox.com/s/2eajtndrmldxyt6/NT85.avi?dl=0
           yt-dlp -j --no-warnings -i --flat-playlist "https://youtube.com/c/${{ matrix.channel }}/channels"| jq -r ".urls" > result.log
