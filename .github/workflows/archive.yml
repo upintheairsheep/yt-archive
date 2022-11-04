@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [SamsungglobalLG]
+        channel: [LGBlogUK]
         #, , 
     steps:
       - name: Set up Python
@@ -43,7 +43,7 @@ jobs:
               continue
             fi 
           done
-          yt-dlp -j --no-warnings -i --flat-playlist "https://youtube.com/c/${{ matrix.channel }}/channels"| jq -r ".urls" > result.log
+          yt-dlp -j --no-warnings -i --flat-playlist "https://youtube.com/user/${{ matrix.channel }}"| jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
             tubeup $p --get-comments --use-download-archive || true
