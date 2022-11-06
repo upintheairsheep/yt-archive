@@ -37,7 +37,7 @@ jobs:
           tubeup --get-comments https://drive.google.com/drive/folders/1rWfyBT8Pa8OOPTWInKfqUz9MxROfbmT5
           for i in {3607..6239}
           do
-            if ! tubeup http://nokiatune.audiodraft.com/entry/"$i" --metadata=collection:opensource_audio
+            if ! tubeup http://nokiatune.audiodraft.com/entry/"$i" --metadata=collection:opensource_audio --metadata=mediatype:audio
             then
               echo "Failed to install $i"
               continue
