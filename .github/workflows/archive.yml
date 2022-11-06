@@ -34,8 +34,8 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          tubeup --get-comments https://www.dropbox.com/s/2eajtndrmldxyt6/NT85.avi?dl=0
-          for i in {1..6239}
+          tubeup --get-comments https://drive.google.com/drive/folders/1rWfyBT8Pa8OOPTWInKfqUz9MxROfbmT5
+          for i in {3607..6239}
           do
             if ! tubeup http://nokiatune.audiodraft.com/entry/"$i" --metadata=collection:opensource_audio
             then
