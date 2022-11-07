@@ -34,7 +34,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          tubeup --get-comments https://youtube.com/user/steevski https://youtube.com/user/SyabasTech http://www.youtube.com/user/ForAppleVideos http://www.youtube.com/user/canwiretradeshow
+          tubeup --get-comments https://youtube.com/user/SyabasTech 
           for i in {3607..6239}
           do
             if ! tubeup http://nokiatune.audiodraft.com/entry/"$i" --metadata=collection:opensource_audio --metadata=mediatype:audio
