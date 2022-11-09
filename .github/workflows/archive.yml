@@ -35,7 +35,7 @@ jobs:
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
          
-          for i in {5306..6239}
+          for i in {5866..6239}
           do
             if ! tubeup http://nokiatune.audiodraft.com/entry/"$i" --metadata=collection:opensource_audio --metadata=mediatype:audio
             then
