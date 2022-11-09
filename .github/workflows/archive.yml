@@ -34,15 +34,6 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-         
-          for i in {5866..6239}
-          do
-            if ! tubeup http://nokiatune.audiodraft.com/entry/"$i" --metadata=collection:opensource_audio --metadata=mediatype:audio
-            then
-              echo "Failed to install $i"
-              continue
-            fi 
-          done
           yt-dlp -j --no-warnings -i --playlist-reverse --flat-playlist "https://youtube.com/user/${{ matrix.channel }}"| jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
