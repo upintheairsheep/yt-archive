@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [WolfieNumbers630000]
+        channel: [afrojer, windows, android, apple, google, instagram, tiktok, appletimemachine]
         #, , 
     steps:
       - name: Set up Python
