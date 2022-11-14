@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install yt-dlp internetarchive tubeup==0.0.33
+          pip install yt-dlp internetarchive tubeup==0.0.33 gallery-dl
           mkdir -p ~/.tubeup
       - uses: actions/cache@v3
         id: cache
@@ -34,16 +34,12 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          yt-dlp -j --no-warnings -i --playlist-reverse --flat-playlist "https://youtube.com/c/${{ matrix.channel }}"| jq -r ".urls" > result.log
+          gallery-dl "https://instagram.com/${{ matrix.channel }}/" --filter "print(post_url)" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
             tubeup $p --get-comments --use-download-archive || true
           done < result.log
-          yt-dlp -j --no-warnings -i --playlist-reverse --flat-playlist "https://youtube.com/c/Samsung/shorts"| jq -r ".urls" > result.log
-          while IFS="" read -r p || [ -n "$p" ]
-          do
-            tubeup $p --get-comments --use-download-archive || true
-          done < result.log
+         
           
           
       
