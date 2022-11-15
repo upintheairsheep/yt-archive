@@ -60,6 +60,26 @@ jobs:
           tubeup https://unofficial-alphabet-lore.fandom.com/wiki/O
 
           tubeup https://unofficial-alphabet-lore.fandom.com/wiki/P
+
+          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/Q
+
+          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/R
+
+          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/S
+
+          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/T
+
+          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/U
+
+          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/V
+
+          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/W
+
+          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/X
+
+          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/Y
+
+          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/Z
           gallery-dl "https://instagram.com/${{ matrix.channel }}/" --filter "print(post_url)" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
