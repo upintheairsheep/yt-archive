@@ -36,7 +36,7 @@ jobs:
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
           tubeup https://unofficial-alphabet-lore.fandom.com/wiki/A
           tubeup https://unofficial-alphabet-lore.fandom.com/wiki/B
-          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/C
+          
           tubeup https://unofficial-alphabet-lore.fandom.com/wiki/D
           tubeup https://unofficial-alphabet-lore.fandom.com/wiki/E
           tubeup https://unofficial-alphabet-lore.fandom.com/wiki/F
