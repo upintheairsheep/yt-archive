@@ -34,6 +34,32 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
+          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/A
+          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/B
+          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/C
+          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/D
+          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/E
+          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/F
+
+          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/G
+
+          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/H
+
+          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/I 
+
+          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/J
+
+          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/K
+
+          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/L
+
+          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/M
+
+          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/N
+
+          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/O
+
+          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/P
           gallery-dl "https://instagram.com/${{ matrix.channel }}/" --filter "print(post_url)" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
