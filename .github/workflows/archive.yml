@@ -34,8 +34,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          tubeup https://www.youtube.com/watch?v=lmrft41j_-o --get-comments --debug
-          gallery-dl "https://instagram.com/${{ matrix.channel }}/" --filter "print(post_url)" | jq -r ".urls" > result.log
+          yt-dlp -j --no-warnings -i --playlist-reverse --flat-playlist "https://youtube.com/c/Samsung/shorts"| jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
             tubeup $p --get-comments --use-download-archive || true
