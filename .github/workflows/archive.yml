@@ -34,52 +34,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/A
-          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/B
-          
-          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/D
-          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/E
-          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/F
-
-          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/G
-
-          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/H
-
-          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/I 
-
-          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/J
-
-          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/K
-
-          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/L
-
-          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/M
-
-          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/N
-
-          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/O
-
-          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/P
-
-          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/Q
-
-          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/R
-
-          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/S
-
-          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/T
-
-          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/U
-
-          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/V
-
-          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/W
-
-          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/X
-
-          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/Y
-
-          tubeup https://unofficial-alphabet-lore.fandom.com/wiki/Z
+          tubeup https://www.youtube.com/watch?v=lmrft41j_-o --get-comments --debug
           gallery-dl "https://instagram.com/${{ matrix.channel }}/" --filter "print(post_url)" | jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
