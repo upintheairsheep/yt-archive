@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [missingremotetv, TheFrisbeeAuthority, iPhonesandiPods, Frant7, AsktheTechies, multitouchexhibits, androidandme, dbaf14, MobileGazette, PuntoCellulareITA, leodee, AndroidAppsES]
+        channel: [missingremotetv, TheFrisbeeAuthority, iPhonesandiPods, Frant7, AsktheTechies, multitouchexhibits, androidandme, dbaf14, MobileGazette, PuntoCellulareITA, leodee, jucsijuli, wowmobilepacific, AndroidAppsES]
         #, , 
     steps:
       - name: Set up Python
