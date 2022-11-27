@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [lglounge9161, missingremotetv, TheFrisbeeAuthority, iPhonesandiPods, Frant7, AsktheTechies, multitouchexhibits, androidandme, dbaf14, MobileGazette, PuntoCellulareITA, leodee, jucsijuli, wowmobilepacific, AndroidAppsES]
+        channel: [PLZlSNHptHPRPPykqm4nVQICUdP6oKhjz0]
         #, , 
     steps:
       - name: Set up Python
@@ -34,7 +34,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          yt-dlp -j --no-warnings -i --playlist-reverse --flat-playlist "https://youtube.com/@${{ matrix.channel }}"| jq -r ".urls" > result.log
+          yt-dlp -j --no-warnings -i --playlist-reverse --flat-playlist "https://youtube.com/playlist?list=${{ matrix.channel }}"| jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
             tubeup $p --get-comments --use-download-archive || true
