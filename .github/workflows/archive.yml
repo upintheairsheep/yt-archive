@@ -34,7 +34,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          snscrape twitter-tag ${{ matrix.channel }} > result.log
+          snscrape twitter-hashtag ${{ matrix.channel }} > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
             tubeup $p --get-comments --use-download-archive || true
