@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [realdonaldtrump]
+        channel: [realdonaldtrump, poutis, afrojer]
         #, , 
     steps:
       - name: Set up Python
