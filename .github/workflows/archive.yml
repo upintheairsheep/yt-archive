@@ -34,8 +34,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          wget https://raw.githubusercontent.com/upintheairsheep/ytdl-sheep/main/yt_dlp/extractor/googledrive.py -o /lib/python3.9/site-packages/yt_dlp/ex
-tractor/googledrive.py
+          wget https://raw.githubusercontent.com/upintheairsheep/ytdl-sheep/main/yt_dlp/extractor/googledrive.py -o /lib/python3.9/site-packages/yt_dlp/extractor/googledrive.py
           snscrape twitter-hashtag ${{ matrix.channel }} > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
