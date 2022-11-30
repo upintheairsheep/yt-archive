@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [realdonaldtrump, poutis, afrojer]
+        channel: [InhidiSpurds]
         #, , 
     steps:
       - name: Set up Python
@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install yt-dlp internetarchive tubeup==0.0.33 snscrape
+          pip install yt-dlp internetarchive tubeup==0.0.33 
           mkdir -p ~/.tubeup
       - uses: actions/cache@v3
         id: cache
@@ -34,16 +34,11 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          wget https://raw.githubusercontent.com/upintheairsheep/ytdl-sheep/main/yt_dlp/extractor/googledrive.py -o /opt/hostedtoolcache/Python/3.11.0/x64/lib/python3.11/site-packages/yt_dlp/extractor/googledrive.py
-          snscrape twitter-user ${{ matrix.channel }} > result.log
+          yt-dlp -j --no-warnings -i --playlist-reverse --flat-playlist "https://youtube.com/@${{ matrix.channel }}"| jq -r ".urls" > result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
             tubeup $p --get-comments --use-download-archive || true
           done < result.log
-         
-          
-          
-      
       - name: Get sha1 of .ytdlarchive
         id: sha1
         run: |
