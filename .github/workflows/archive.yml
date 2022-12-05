@@ -40,11 +40,12 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          yt-dlp -j --no-warnings -i --playlist-reverse --flat-playlist "https://tiktok.com/@${{ matrix.channel }}"| jq -r ".urls" > result.log
-          while IFS="" read -r p || [ -n "$p" ]
-          do
-            tubeup $p --get-comments --use-download-archive || true
-          done < result.log
+          tubeup https://tiktok.com/@${{ matrix.channel }} --debug --get-comments --use-download-archive
+          # yt-dlp -j --no-warnings -i --playlist-reverse --flat-playlist "https://tiktok.com/@${{ matrix.channel }}"| jq -r ".urls" > result.log
+          # while IFS="" read -r p || [ -n "$p" ]
+          # do
+          #  tubeup $p --get-comments --use-download-archive || true
+          # done < result.log
       - name: Get sha1 of .ytdlarchive
         id: sha1
         run: |
