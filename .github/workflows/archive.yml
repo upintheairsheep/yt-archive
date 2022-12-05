@@ -23,7 +23,7 @@ jobs:
           wget https://github.com/upintheairsheep/yt-dlp/archive/refs/heads/patch-9.zip
           unzip patch-9.zip
           cd yt-dlp-patch-9
-          pip install requirements.txt
+          pip install -r requirements.txt
           pip install setup.py
           pip install internetarchive tubeup==0.0.33 
           mkdir -p ~/.tubeup
