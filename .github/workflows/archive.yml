@@ -24,10 +24,10 @@ jobs:
           unzip patch-9.zip
           cd yt-dlp-patch-9
           pip install -r requirements.txt
-          python3 setup.py install firefox
+          python3 setup.py install
           pip install internetarchive tubeup==0.0.33 
           mkdir -p ~/.tubeup
-          playwright install
+          playwright install firefox
       - uses: actions/cache@v3
         id: cache
         with:
