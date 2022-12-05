@@ -24,7 +24,7 @@ jobs:
           unzip patch-9.zip
           cd yt-dlp-patch-9
           pip install -r requirements.txt
-          pip install setup.py
+          python3 setup.py install
           pip install internetarchive tubeup==0.0.33 
           mkdir -p ~/.tubeup
       - uses: actions/cache@v3
