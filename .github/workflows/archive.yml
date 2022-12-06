@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [1WfVZPA-LOWn58UC234ixZiBE7x3FM1yA, 1WA3X4wZTU66SzMbl77ZRN2aMw9kjybbm, 16VopU_L6jNGyi80j9BZpbvniylsYDXsi, 14bRT2Tw_IHLTwM7YhIOZUXg0pT0Uw6HG]
+        channel: [1TF2-y43GyihdOXKao_qKEiZVGxm1Ym_T]
         #, , 
     steps:
       - name: Set up Python
@@ -40,7 +40,8 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          tubeup https://drive.google.com/file/d/${{ matrix.channel }}/view --metadata=collection:open_source_software --metadata=mediatype:software --debug --get-comments --use-download-archive
+          tubeup https://drive.google.com/file/d/${{ matrix.channel }}/view 
+          # --metadata=collection:open_source_software --metadata=mediatype:software --debug --get-comments --use-download-archive
           # yt-dlp -j --no-warnings -i --playlist-reverse --flat-playlist "https://tiktok.com/@${{ matrix.channel }}"| jq -r ".urls" > result.log
           # while IFS="" read -r p || [ -n "$p" ]
           # do
