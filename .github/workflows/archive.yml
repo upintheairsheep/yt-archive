@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [1TF2-y43GyihdOXKao_qKEiZVGxm1Ym_T]
+        channel: [jadoo4fan, themariocrafter, newlinersseries]
         #, , 
     steps:
       - name: Set up Python
