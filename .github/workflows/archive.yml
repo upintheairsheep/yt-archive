@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [twitter, facebook, tiktok, instagram, discord, snapchat, google, youtube, android, fbi, snscrape, PhantomArcade3K, ninja_muffin99, elonmusk, unitednations, unitedstates, unitedstatesofamerica, github, internetarchive, roblox]
+        channel: [twitter, facebook, tiktok, instagram, discord, snapchat, google, youtube, android, fbi, snscrape, PhantomArcade3K, ninja_muffin99, elonmusk, unitedstates, github, internetarchive, roblox]
         #, , 
     steps:
       - name: Set up Python
