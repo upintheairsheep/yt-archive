@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [twitter, facebook, tiktok, instagram, discord, fbi, roblox]
+        channel: [twitter, facebook, tiktok, instagram, discord, snapchat, google, youtube, android, fbi, snscrape, PhantomArcade3K, ninja_muffin99, elonmusk, unitednations, unitedstates, unitedstatesofamerica, github, internetarchive, roblox]
         #, , 
     steps:
       - name: Set up Python
@@ -25,7 +25,7 @@ jobs:
           cd yt-dlp-patch-9
           pip install -r requirements.txt
           python3 setup.py install
-          pip install internetarchive tubeup==0.0.33 
+          pip install internetarchive tubeup==0.0.33 snscrape
           mkdir -p ~/.tubeup
           playwright install firefox
       - uses: actions/cache@v3
