@@ -28,6 +28,7 @@ jobs:
           pip install internetarchive tubeup==0.0.33 snscrape gallery-dl
           mkdir -p ~/.tubeup
           playwright install firefox
+          sudo apt-get install ffprobe
       - uses: actions/cache@v3
         id: cache
         with:
