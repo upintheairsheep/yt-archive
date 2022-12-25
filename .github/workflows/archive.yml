@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [android, ios]
+        channel: [android, ios, smart tv, friday night funkin, roblox, backrooms]
         #, , 
     steps:
       - name: Set up Python
