@@ -52,6 +52,7 @@ jobs:
              then
                echo "Failed to archive $p"
                continue
+            fi
           done < result.log
       - name: Get sha1 of .ytdlarchive
         id: sha1
