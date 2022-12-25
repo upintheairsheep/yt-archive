@@ -50,9 +50,8 @@ jobs:
           do
             if ! tubeup $p --debug --get-comments --use-download-archive || true
              then
-               echo "Failed to install $p"
+               echo "Failed to archive $p"
                continue
-             done
           done < result.log
       - name: Get sha1 of .ytdlarchive
         id: sha1
