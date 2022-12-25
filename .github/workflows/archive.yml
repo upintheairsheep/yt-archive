@@ -48,7 +48,11 @@ jobs:
           # wget https://pipelines.actions.githubusercontent.com/serviceHosts/76b2e30e-30f9-4b0c-a23c-b369a59f145c/_apis/pipelines/1/runs/362/signedlogcontent/2?urlExpires=2022-12-18T21%3A10%3A43.8685015Z&urlSigningMethod=HMACV1&urlSignature=8IO%2BU3u6ubpQiYmYS6ax0Y%2FWdpdrtP0fPKWKnbouRBk%3D -o result.log
           while IFS="" read -r p || [ -n "$p" ]
           do
-            tubeup $p --debug --get-comments --use-download-archive || true
+            if ! tubeup $p --debug --get-comments --use-download-archive || true
+             then
+               echo "Failed to install $p"
+               continue
+             done
           done < result.log
       - name: Get sha1 of .ytdlarchive
         id: sha1
