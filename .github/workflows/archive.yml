@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [ExploiteeRs]
+        channel: [android, ios]
         #, , 
     steps:
       - name: Set up Python
@@ -40,9 +40,9 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          tubeup https://www.buzzvideo.com/article/i7178422357449785862?referer=foryou&pid=website_feed --debug --get-comments --use-download-archive
+          # tubeup https://www.buzzvideo.com/article/i7178422357449785862?referer=foryou&pid=website_feed --debug --get-comments --use-download-archive
           # --metadata=collection:open_source_software --metadata=mediatype:software --debug --get-comments --use-download-archive
-          # yt-dlp -j --no-warnings -i --flat-playlist "https://m.youtube.com/source/FraqxqjBU84/shorts?bp=8gVQCkQSQgoLRnJhcXhxakJVODQSC0ZyYXF4cWpCVTg0GgtRTzFlVm5TWGtmRSINCOoREggIDhCA-fzZAyoKEggIDhCA-fzZAyi-l_mLgpj7qXM%253D"| jq -r ".urls" > result.log
+          yt-dlp -j --no-warnings -i --flat-playlist "gvsearch:site:buzzvideo.com ${{ matrix.channel }}"| jq -r ".urls" > result.log
           # gallery-dl https://instagram.com/${{ matrix.channel }} --filter "print(post_url)" > result.log
           # wget -m http://www.buzzvideo.com 2>&1 | grep '^--' | awk '{ print $3 }' 
           # wget https://pipelines.actions.githubusercontent.com/serviceHosts/76b2e30e-30f9-4b0c-a23c-b369a59f145c/_apis/pipelines/1/runs/362/signedlogcontent/2?urlExpires=2022-12-18T21%3A10%3A43.8685015Z&urlSigningMethod=HMACV1&urlSignature=8IO%2BU3u6ubpQiYmYS6ax0Y%2FWdpdrtP0fPKWKnbouRBk%3D -o result.log
