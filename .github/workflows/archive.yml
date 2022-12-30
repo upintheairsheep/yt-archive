@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [1BDzimgq7fHqBJQHQmCXppVsefQXQT2WL, 1mqHSMGqZptOW2_DWtibWfjs_4Fo2gj1M, 1CWNgrezG5kqQNJBhW7Zd0vWfL14VzPmo]
+        channel: [buzzvideo]
         #, , 
     steps:
       - name: Set up Python
@@ -40,7 +40,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          tubeup "https://www.buzzvideo.com/@mhkybxcxkaj24946/%E3%80%90android%E3%80%91%E3%81%AB%E3%82%83%E3%82%93%E3%81%93%E5%A4%A7%E6%88%A6%E4%BA%89-%C3%97-%E5%AE%9F%E6%B3%81%E3%81%9D%E3%81%AE%EF%BC%94%EF%BC%93-%C3%97-%E7%B5%8C%E9%A8%93%E3%81%AF%E8%9C%9C%E3%81%AE%E5%91%B3-BQIAvTG1Z14" "https://www.buzzvideo.com/amp/article/i7086412112242803206" "https://www.buzzvideo.com/article/i7071180152968954373" "https://www.buzzvideo.com/@%E3%83%9E%E3%83%A1/iphone%E3%81%A7android%E3%82%92%E4%BD%BF%E3%81%86%E6%96%B9%E6%B3%95%E3%82%92%E3%81%94%E7%B4%B9%E4%BB%8B%E3%81%97%E3%81%BE%E3%81%99%E3%80%90%E8%A3%8F%E3%83%AF%E3%82%B6%E3%80%91-BcJCiHawEWI" "https://www.buzzvideo.com/article/i7101611623139262981" "https://www.buzzvideo.com/@%E3%82%B1%E3%83%BC%E3%82%BF%E3%82%A4%E3%82%B9%E3%83%9E%E3%83%9B%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC/xtrons-tb706apl-%E8%BB%8A%E8%BC%89%E3%82%A2%E3%83%B3%E3%83%89%E3%83%AD%E3%82%A4%E3%83%89-%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%A0rom%E5%B0%8E%E5%85%A5%E3%81%BE%E3%81%A7%E5%BE%B9%E5%BA%95%E7%B4%B9%E4%BB%8B-%E5%8F%96%E3%82%8A%E4%BB%98%E3%81%91%E3%83%BB%E8%A8%AD%E5%AE%9A%E6%96%B9%E6%B3%95-BQJARLZpuFs" "https://www.buzzvideo.com/article/i6589652335285240326" "https://www.buzzvideo.com/article/i6781607601097409029"   
+          tubeup "https://www.buzzvideo.com/amp/article/i7086412112242803206" "https://www.buzzvideo.com/article/i7071180152968954373" "https://www.buzzvideo.com/article/i7101611623139262981" "" "https://www.buzzvideo.com/article/i6589652335285240326" "https://www.buzzvideo.com/article/i6781607601097409029"   
           tubeup https://drive.google.com/file/d/${{ matrix.channel }}/view --ignore-existing-item --metadata=collection:open_source_software --metadata=mediatype:software --debug --get-comments --use-download-archive
           yt-dlp -j --no-warnings -i --flat-playlist "gvsearch:site:buzzvideo.com ${{ matrix.channel }}"| jq -r ".urls" > result.log
           # gallery-dl https://instagram.com/${{ matrix.channel }} --filter "print(post_url)" > result.log
