@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [buzzvideo]
+        channel: [the_mariocrafter]
         #, , 
     steps:
       - name: Set up Python
