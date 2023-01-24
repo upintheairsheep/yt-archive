@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [dumbfoxfurry, lgsmarttv, samsungsmarttv]
+        channel: [samsungtomorrow4507]
         #, , 
     steps:
       - name: Set up Python
