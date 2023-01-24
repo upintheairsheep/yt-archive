@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [samsungtomorrow4507]
+        channel: [samsungmena]
         #, , 
     steps:
       - name: Set up Python
