@@ -27,7 +27,6 @@ jobs:
           python3 setup.py install
           pip install internetarchive tubeup==0.0.33 snscrape gallery-dl
           mkdir -p ~/.tubeup
-          wget https://github.com/upintheairsheep/tiktoktoss/raw/main/tiktoktoss
       - name: Setup firefox
         uses: browser-actions/setup-firefox@v1
         with:
@@ -44,6 +43,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
+          wget https://github.com/upintheairsheep/tiktoktoss/raw/main/tiktoktoss
           python3 tiktoktoss dumbfoxfurry
           tubeup --get-comments "twitch.tv/ninja_muffin99/videos?filter=all"             
           # tubeup https://drive.google.com/file/d/${{ matrix.channel }}/view --ignore-existing-item --metadata=collection:open_source_software --metadata=mediatype:software --debug --get-comments --use-download-archive
