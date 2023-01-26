@@ -27,6 +27,7 @@ jobs:
           python3 setup.py install
           pip install internetarchive tubeup==0.0.33 snscrape gallery-dl
           mkdir -p ~/.tubeup
+          sudo apt install firefox-geckodriver
       - name: Setup firefox
         uses: browser-actions/setup-firefox@v1
         with:
