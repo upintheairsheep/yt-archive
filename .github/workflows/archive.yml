@@ -43,7 +43,8 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          sudo apt install firefox-geckodriver
+          pip install webdrivermanager
+          webdrivermanager firefox --linkpath /usr/local/bin
           wget https://github.com/upintheairsheep/tiktoktoss/raw/main/tiktoktoss
           python3 tiktoktoss dumbfoxfurry
           tubeup --get-comments "twitch.tv/ninja_muffin99/videos?filter=all"             
