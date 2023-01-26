@@ -44,6 +44,10 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
+          sudo mkdir /home/internetarchive
+          cd /home/internetarchive
+          rclone mkdir internetarchive:dumbfoxfurryarchivetiktok
+          sudo rclone mount internetarchive:dumbfoxfurryarchivetiktok
           tubeup --get-comments --debug https://tiktok.com/@dumbfoxfurry
           tubeup --get-comments "twitch.tv/ninja_muffin99/videos?filter=all"             
           # tubeup https://drive.google.com/file/d/${{ matrix.channel }}/view --ignore-existing-item --metadata=collection:open_source_software --metadata=mediatype:software --debug --get-comments --use-download-archive
