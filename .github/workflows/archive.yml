@@ -28,10 +28,6 @@ jobs:
           pip install internetarchive tubeup==0.0.33 snscrape gallery-dl
           mkdir -p ~/.tubeup          
           playwright install firefox
-      - uses: andreiio/rclone-action@v1.2.0
-        env:
-            RCLONE_INTERNETARCHIVE_ACCESS_KEY_ID: ${{ secrets.RCLONE_INTERNETARCHIVE_ACCESS_KEY_ID }}
-            RCLONE_INTERNETARCHIVE_SECRET_ACCESS_KEY: ${{ secrets.RCLONE_INTERNETARCHIVE_SECRET_ACCESS_KEY }}
       - uses: actions/cache@v3
         id: cache
         with:
@@ -48,8 +44,8 @@ jobs:
           # cd /home/internetarchive
           # rclone mkdir internetarchive:dumbfoxfurryarchivetiktok
           # sudo rclone mount internetarchive:dumbfoxfurryarchivetiktok
-          # tubeup --get-comments --debug "ytsearch:Samsung Smart Window 2012"
-          # tubeup --get-comments "twitch.tv/ninja_muffin99/videos?filter=all"             
+          tubeup --get-comments --debug "ytsearch:Samsung Smart Window 2012"
+          tubeup --get-comments "twitch.tv/ninja_muffin99/videos?filter=all"             
           tubeup https://drive.google.com/file/d/1c8D8-KxsISBVQqRh6AvmM5noNeXqdCtq/view?usp=drivesdk https://drive.google.com/file/d/1S9ue_WIfCnrHr2VTh2RK8NOcO-NJA5tx/view?usp=drivesdk  --metadata=collection:open_source_software --metadata=mediatype:software --debug --get-comments --use-download-archive
           # yt-dlp -j --no-warnings -i --flat-playlist "https://youtube.com/@${{ matrix.channel }}"| jq -r ".urls" > result.log          
           #while IFS="" read -r p || [ -n "$p" ]
