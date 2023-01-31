@@ -40,9 +40,9 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          mkdir ~/.instaup
-          wget ${{ secrets.instaurl }} > ~/.instaup/themariocrafter.login
-          instaup ${{ matrix.channel }} --login themariocrafter --delete
+          # mkdir ~/.instaup
+          # wget ${{ secrets.instaurl }} > ~/.instaup/themariocrafter.login
+          #instaup ${{ matrix.channel }} --login themariocrafter --delete
           # sudo mkdir /home/internetarchive
           # cd /home/internetarchive
           # rclone mkdir internetarchive:dumbfoxfurryarchivetiktok
@@ -50,7 +50,8 @@ jobs:
           # tubeup --get-comments --debug https://www.youtube.com/results?app=desktop&sp=mAEA&search_query=samsung+smart+window+2012
           # tubeup --get-comments "twitch.tv/ninja_muffin99/videos?filter=all"    
           # tubeup --get-comments --debug https://youtube.com/@Gygos3654         
-          # tubeup https://drive.google.com/file/d/1c8D8-KxsISBVQqRh6AvmM5noNeXqdCtq/view?usp=drivesdk https://drive.google.com/file/d/1S9ue_WIfCnrHr2VTh2RK8NOcO-NJA5tx/view?usp=drivesdk  --metadata=collection:open_source_software --metadata=mediatype:software --debug --get-comments
+          tubeup https://www.dropbox.com/s/cfgepq38fzr0foz/MOV_0100.mp4?dl=0 --get-comments
+          tubeup http://download.samygo.tv/Others/hidden/SamyGO-VM.7z https://drive.google.com/file/d/1c8D8-KxsISBVQqRh6AvmM5noNeXqdCtq/view?usp=drivesdk https://drive.google.com/file/d/1S9ue_WIfCnrHr2VTh2RK8NOcO-NJA5tx/view?usp=drivesdk  --metadata=collection:open_source_software --metadata=mediatype:software --debug --get-comments
           # yt-dlp -j --no-warnings -i --flat-playlist "https://youtube.com/@${{ matrix.channel }}"| jq -r ".urls" > result.log          
           # while IFS="" read -r p || [ -n "$p" ]
           # do            
