@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [chickenchickenchickenchicken]
+        channel: [apple]
         #, , 
     steps:
       - name: Set up Python
@@ -40,8 +40,9 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          
-          instaup 
+          mkdir ~/.instaup
+          echo "${{ secrets.INSTALOGIN }}" > ~/.instaup/themariocrafter.login
+          instaup ${{ matrix.channel }} --login themariocrafter --delete
           # sudo mkdir /home/internetarchive
           # cd /home/internetarchive
           # rclone mkdir internetarchive:dumbfoxfurryarchivetiktok
