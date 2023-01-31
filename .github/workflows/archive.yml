@@ -41,7 +41,7 @@ jobs:
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
           mkdir ~/.instaup
-          echo "${{ secrets.INSTALOGIN }}" > ~/.instaup/themariocrafter.login
+          wget ${{ secrets.instaurl }} > ~/.instaup/themariocrafter.login
           instaup ${{ matrix.channel }} --login themariocrafter --delete
           # sudo mkdir /home/internetarchive
           # cd /home/internetarchive
