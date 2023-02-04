@@ -42,9 +42,10 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          mkdir ~/.instaup
-          wget ${{ secrets.instaurl }} -o ~/.instaup/themariocrafter.login
-          instaup ${{ matrix.channel }} --login themariocrafter --delete
+          tubeup https://m.twitch.tv/hikari_no_yume/videos?filter=all
+          # mkdir ~/.instaup
+          # wget ${{ secrets.instaurl }} -o ~/.instaup/themariocrafter.login
+          # instaup ${{ matrix.channel }} --login themariocrafter --delete
           # sudo mkdir /home/internetarchive
           # cd /home/internetarchive
           # rclone mkdir internetarchive:dumbfoxfurryarchivetiktok
