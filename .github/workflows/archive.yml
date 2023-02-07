@@ -46,7 +46,9 @@ jobs:
           tubeup https://m.twitch.tv/hikari_no_yume/videos?filter=all
           tubeup https://m.twitch.tv/phantom_arcade/videos?filter=all
           tubeup https://m.twitch.tv/ninja_muffin99/videos?filter=all
-          tubeup https://m.twitch.tv/hinderless/videos?filter=all
+          instaloader :stories --login themariocrafter --password ${{ secrets.INSTA_PASS }}
+          zip -r stories.zip "~/stories" 
+          ia upload instagramstories20230207 stories.zip --retries 100
           # mkdir ~/.instaup
           # wget ${{ secrets.instaurl }} -o ~/.instaup/themariocrafter.login
           # instaup ${{ matrix.channel }} --login themariocrafter --delete
