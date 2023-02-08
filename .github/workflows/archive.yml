@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [apple]
+        channel: [mms_teatalk]
         #, , 
     steps:
       - name: Set up Python
