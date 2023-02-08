@@ -52,7 +52,7 @@ jobs:
           # zip -r stories.zip ":stories" 
           # ia upload instagramstories20230208 stories.zip --retries 100
           mkdir ~/.instaup
-          echo '${{ secrets.IGUP }}' | base64 --decode > /home/runner/.instaup/themariocrafter.login
+          echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.instaup/themariocrafter.login
           instaup ${{ matrix.channel }} --login themariocrafter --delete
           # sudo mkdir /home/internetarchive
           # cd /home/internetarchive
