@@ -11,6 +11,7 @@ jobs:
       matrix:
         channel: [samsung, lgelectronics, Teslamoters, television__hub, justasamsungqled8ktv, jadootvoslo, jadootvaus, jadootvcanada, jadootvfarsi, jadootvpersian, googlepixel, cellebrite, multicom.pl, oxygenforensics, magnet.forensics, be_na2000, visittemecula, windows, newlineinteractive, newlineinteractiveindia, newline_slovenia, newlineinteractiveemea, newlineinteractiveespana]
         #, , 
+      fail-fast: false
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
