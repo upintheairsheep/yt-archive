@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [dumbfoxfurry, dumbfoxfurry_tiktok]
+        channel: [earth, android]
         #, , 
     steps:
       - name: Set up Python
