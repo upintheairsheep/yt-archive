@@ -46,6 +46,7 @@ jobs:
           tubeup https://m.twitch.tv/hikari_no_yume/videos?filter=all
           tubeup https://m.twitch.tv/phantom_arcade/videos?filter=all
           tubeup https://m.twitch.tv/ninja_muffin99/videos?filter=all
+          mkdir /home/runner/.config/instaloader/
           echo '${{ secrets.INSTA2 }}' | base64 --decode > /home/runner/.config/instaloader/session-themariocrafter
           instaloader :stories --login themariocrafter 
           zip -r stories.zip ":stories" 
