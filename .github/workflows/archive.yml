@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [mms_teatalk]
+        channel: [dumbfoxfurry, dumbfoxfurry_tiktok]
         #, , 
     steps:
       - name: Set up Python
