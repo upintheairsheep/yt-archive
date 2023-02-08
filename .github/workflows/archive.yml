@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [earth, android]
+        channel: [samsung, lgelectronics, Teslamoters, television__hub, justasamsungqled8ktv, jadootvoslo, jadootvaus, jadootvcanada, jadootvfarsi, jadootvpersian, newlineinteractive, newlineinteractiveindia, newline_slovenia, newlineinteractiveemea, newlineinteractiveespana]
         #, , 
     steps:
       - name: Set up Python
