@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [temecula.memes, newlineinteractiveindia, samsung, margaritamiddleships, bee_na2000, androidtv.id, androidtvsfl, android_tv_zhez_sat, androidtvvzla, tvboxbangl, aerochocolateuki, oxygenforensics, magnet.forensics, mikeylikesiticecream]
+        channel: [temecula.memes, samsung, margaritamiddleships, bee_na2000, oxygenforensics, magnet.forensics]
         #, , 
       fail-fast: false
     steps:
