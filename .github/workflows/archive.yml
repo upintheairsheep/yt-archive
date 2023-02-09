@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [temecula.memes, samsung, margaritamiddleships, bee_na2000, oxygenforensics, magnet.forensics]
+        channel: [temecula.memes, samsung, oxygenforensics, magnet.forensics]
         #, , 
       fail-fast: false
     steps:
