@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [samsung, androidtvbo, instagramforbusiness, android_tv_, temecula_docxs_mms, margaritamiddleships, mms_counselors, mms_moore, mms.gooch, mms_steam, asb.Margarita, margaritacult, bee_na2000, smart.tv.android.box, androidtv.id, androidtvsfl, android_tv_zhez_sat, androidtvvzla, android_box.tv, tvboxbangl, androidboxmall, mikeylikesiticecream]
+        channel: [samsung, androidtvbo, instagramforbusiness, android_tv_, temecula_docxs_mms, margaritamiddleships, zopo_mobile, zopomobileth, zopomobileofficial, zopomobilees, zopo_malaysia, mms_counselors, mms_moore, mms.gooch, mms_steam, asb.Margarita, margaritacult, bee_na2000, smart.tv.android.box, androidtv.id, androidtvsfl, android_tv_zhez_sat, androidtvvzla, android_box.tv, tvboxbangl, androidboxmall, skittles, mmschocolate.cl, kitkat, kitkat_us, motts, hersheys, cocacola, pringles, milkeywaybar, frootloops, aerobubblychocolate, aerochocolateuki, temecula_fresh_food, mikeylikesiticecream]
         #, , 
       fail-fast: false
     steps:
