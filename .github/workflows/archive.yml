@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [samsung, androidtvbo, bee_na2000, smart.tv.android.box, androidtv.id, androidtvsfl, android_tv_zhez_sat, androidtvvzla, android_box.tv, tvboxbangl, androidboxmall, mikeylikesiticecream]
+        channel: [samsung, androidtvbo, instagramforbusiness, android_tv_, temecula_docxs_mms, margaritamiddleships, mms_counselors, mms_moore, mms.gooch, mms_steam, asb.Margarita, margaritacult, bee_na2000, smart.tv.android.box, androidtv.id, androidtvsfl, android_tv_zhez_sat, androidtvvzla, android_box.tv, tvboxbangl, androidboxmall, mikeylikesiticecream]
         #, , 
       fail-fast: false
     steps:
