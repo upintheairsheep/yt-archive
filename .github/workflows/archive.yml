@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [samsung, lgelectronics, Teslamoters, television__hub, justasamsungqled8ktv, jadootvoslo, jadootvaus, jadootvcanada, jadootvfarsi, jadootvpersian, googlepixel, cellebrite, multicom.pl, oxygenforensics, magnet.forensics, bee_na2000, visittemecula, windows, newlineinteractive, newlineinteractiveindia, newline_slovenia, newlineinteractiveemea, newlineinteractiveespana]
+        channel: [samsung, bee_na2000]
         #, , 
       fail-fast: false
     steps:
