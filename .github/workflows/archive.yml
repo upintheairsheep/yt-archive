@@ -43,12 +43,11 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          tubeup --get-comments https://www.youtube.com/watch?v=6BkyRyS9Am0
           tubeup https://m.twitch.tv/hikari_no_yume/videos?filter=all
           tubeup https://m.twitch.tv/phantom_arcade/videos?filter=all
           tubeup https://m.twitch.tv/ninja_muffin99/videos?filter=all
-          # mkdir /home/runner/.config/instaloader/
-          # echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.config/instaloader/session-themariocrafter
+          mkdir /home/runner/.config/instaloader/
+          echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.config/instaloader/session-themariocrafter
           instaloader :stories --login themariocrafter 
           zip -r stories.zip ":stories" 
           ia upload instagramstories20230209 stories.zip --retries 100
