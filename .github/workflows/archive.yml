@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [samsung]
+        channel: [windows, temecula.memes]
         #, , 
       fail-fast: false
     steps:
