@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [windows, temecula.memes]
+        channel: [stories]
         #, , 
       fail-fast: false
     steps:
@@ -48,9 +48,9 @@ jobs:
           tubeup https://m.twitch.tv/ninja_muffin99/videos?filter=all        
           mkdir /home/runner/.config/instaloader/
           echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.config/instaloader/session-themariocrafter
-          # instaloader :stories --login themariocrafter 
-          # zip -r stories.zip ":stories" 
-          # ia upload instagramstories20230209 stories.zip --retries 100          
+          instaloader :stories --login themariocrafter 
+          zip -r stories.zip ":stories" 
+          ia upload instagramstories20230211 stories.zip --retries 100          
           mkdir ~/.instaup
           echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.instaup/themariocrafter.login
           instaup ${{ matrix.channel }} --login themariocrafter --delete
