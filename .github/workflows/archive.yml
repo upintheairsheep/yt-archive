@@ -50,7 +50,7 @@ jobs:
           echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.config/instaloader/session-themariocrafter
           instaloader :stories --login themariocrafter 
           zip -r stories.zip ":stories" 
-          ia upload instagramstories20230211 stories.zip --retries 100          
+          ia upload instagramstories20230212 stories.zip --retries 100          
           mkdir ~/.instaup
           echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.instaup/themariocrafter.login
           instaup ${{ matrix.channel }} --login themariocrafter --delete
