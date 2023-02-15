@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [stories]
+        channel: [_open_ai]
         #, , 
       fail-fast: false
     steps:
@@ -46,11 +46,12 @@ jobs:
           tubeup https://m.twitch.tv/hikari_no_yume/videos?filter=all
           tubeup https://m.twitch.tv/phantom_arcade/videos?filter=all
           tubeup https://m.twitch.tv/ninja_muffin99/videos?filter=all        
+          tubeup https://vimeo.com/90138302 --get-comments
           mkdir /home/runner/.config/instaloader/
           echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.config/instaloader/session-themariocrafter
           instaloader :stories --login themariocrafter 
           zip -r stories.zip ":stories" 
-          ia upload instagramstories20230214 stories.zip --retries 100          
+          ia upload instagramstories20230215 stories.zip --retries 100          
           mkdir ~/.instaup
           echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.instaup/themariocrafter.login
           instaup ${{ matrix.channel }} --login themariocrafter --delete
