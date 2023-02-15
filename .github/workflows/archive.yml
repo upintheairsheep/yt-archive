@@ -48,9 +48,6 @@ jobs:
           tubeup https://m.twitch.tv/ninja_muffin99/videos?filter=all        
           tubeup --get-comments https://drive.google.com/file/d/1Fd1pX1r4waRkD6Z2O8J5cRZyeSNU5-SY/view?usp=sharing
           tubeup --get-comments https://drive.google.com/file/d/1TpXtoSUQ-ZgfVXZ0PfxRfQyTTWYu1Dw-/view?usp=sharing
-          tubeup --get-comments https://drive.google.com/drive/folders/1WJmvEjkCZhFVl9871-Eq3VJW5vxnMKCI?usp=sharing
-          tubeup --get-comments https://drive.google.com/drive/folders/196qy66MWn8GH2tyn5qF9zO_mlWnOsvy8?usp=sharing
-          tubeup --get-comments https://drive.google.com/drive/folders/1u__YVHjp7lSFBkUH89mmd8Uvi0DieAZV?usp=sharing
           mkdir /home/runner/.config/instaloader/
           echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.config/instaloader/session-themariocrafter
           instaloader :stories --login themariocrafter 
