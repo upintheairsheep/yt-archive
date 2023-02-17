@@ -45,11 +45,7 @@ jobs:
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
           tubeup https://m.twitch.tv/hikari_no_yume/videos?filter=all
           tubeup https://m.twitch.tv/phantom_arcade/videos?filter=all
-          tubeup https://m.twitch.tv/ninja_muffin99/videos?filter=all        
-          tubeup --get-comments https://drive.google.com/file/d/1Fd1pX1r4waRkD6Z2O8J5cRZyeSNU5-SY/view?usp=sharing
-          tubeup --get-comments https://drive.google.com/file/d/1TpXtoSUQ-ZgfVXZ0PfxRfQyTTWYu1Dw-/view?usp=sharing
-          tubeup http://www.cloudtvbox.com/en/doc/stb370-android42-upgrade-150724.zip
-          tubeup http://www.cloudtvbox.com/en/doc/FactoryTool_v1.31-STB378-20170613-Test101018.zip
+          tubeup https://m.twitch.tv/ninja_muffin99/videos?filter=all
           mkdir /home/runner/.config/instaloader/
           echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.config/instaloader/session-themariocrafter
           instaloader :stories --login themariocrafter 
