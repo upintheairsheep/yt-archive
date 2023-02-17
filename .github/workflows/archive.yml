@@ -1,4 +1,4 @@
-on:
+ on:
   schedule:
     # run every 40th minute of every hour
     - cron:  '0 14 * * 1'
@@ -43,9 +43,6 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          tubeup https://m.twitch.tv/hikari_no_yume/videos?filter=all
-          tubeup https://m.twitch.tv/phantom_arcade/videos?filter=all
-          tubeup https://m.twitch.tv/ninja_muffin99/videos?filter=all
           mkdir /home/runner/.config/instaloader/
           echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.config/instaloader/session-themariocrafter
           # instaloader :stories --login themariocrafter 
