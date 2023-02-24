@@ -21,14 +21,14 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          wget https://github.com/upintheairsheep/yt-dlp/archive/refs/heads/patch-9.zip
-          unzip patch-9.zip
-          cd yt-dlp-patch-9
-          pip install -r requirements.txt
-          python3 setup.py install
-          pip install internetarchive tubeup==0.0.33 snscrape gallery-dl instaup
+          # wget https://github.com/upintheairsheep/yt-dlp/archive/refs/heads/patch-9.zip
+          # unzip patch-9.zip
+          # cd yt-dlp-patch-9
+          # pip install -r requirements.txt
+          # python3 setup.py install
+          pip install internetarchive tubeup==0.0.33 snscrape gallery-dl instaup yt-dlp
           mkdir -p ~/.tubeup          
-          playwright install firefox
+          # playwright install firefox
       - uses: actions/cache@v3
         id: cache
         with:
