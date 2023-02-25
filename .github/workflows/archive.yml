@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [GosuGadget]
+        channel: [Samsung, LGGlobal]
         #, , 
       fail-fast: false
     steps:
