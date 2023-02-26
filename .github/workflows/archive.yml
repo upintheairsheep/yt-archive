@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [Samsung, LGGlobal]
+        channel: [SamsungLGGlobal]
         #, , 
       fail-fast: false
     steps:
@@ -50,7 +50,7 @@ jobs:
           # ia upload instagramstories20230216 stories.zip --retries 100          
           mkdir ~/.instaup
           echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.instaup/themariocrafter.login
-          tubeup --get-comments https://vimeo.com/80187504 
+          tubeup --get-comments https://youtube.com/playlist?list=PLuqy83wG7WekC77bSbvE1VWDDiNRxOAG_
           # instaup ${{ matrix.channel }} --login themariocrafter --delete
           # sudo mkdir /home/internetarchive
           # cd /home/internetarchive
