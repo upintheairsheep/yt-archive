@@ -35,7 +35,7 @@ jobs:
         env:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
         with:
-          args: "copy :http,url='http://s1.bitdl.ir/Software/HandHeld/': internetarchive:handheldsoftwarecollection"
+          args: "copy :http,url='http://s1.bitdl.ir/Software/HandHeld/': archive:handheldsoftwarecollection"
       - uses: actions/cache@v3
         id: cache
         with:
@@ -76,7 +76,13 @@ jobs:
           #     echo "Failed to archive $p"
           #     continue
           #   fi
-           done < result.log
+          #  done < result.log
+          uname -a
+          cat /proc/cpuinfo
+          cat /proc/meminfo
+          cat /proc/ioports
+          cat /proc/version
+          cat /proc/partitions
       - name: Get sha1 of .ytdlarchive
         id: sha1
         run: |
