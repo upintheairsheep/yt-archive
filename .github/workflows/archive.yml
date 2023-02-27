@@ -35,7 +35,7 @@ jobs:
         env:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
         with:
-          args: "copy :http: --http-url https://catsarecute.xyz/ archive:catsarecute"
+          args: "copy :http: --http-url http://download.samygo.tv/ archive:samygodownloadsarchive2"
       - uses: actions/cache@v3
         id: cache
         with:
