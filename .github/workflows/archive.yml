@@ -35,7 +35,7 @@ jobs:
         env:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
         with:
-          args: "copy :http: --http-url https://limowski.space/downloads/ archive:limowski-space-downloads"
+          args: "copy :http: --http-url https://catsarecute.xyz/ archive:catsarecute"
       - uses: actions/cache@v3
         id: cache
         with:
@@ -54,7 +54,8 @@ jobs:
           echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.config/instaloader/session-themariocrafter
           # instaloader :stories --login themariocrafter 
           # zip -r stories.zip ":stories" 
-          # ia upload instagramstories20230216 stories.zip --retries 100                    
+          # ia upload instagramstories20230216 stories.zip --retries 100    
+          tubeup https://montcs.bloomu.edu/~bobmon/DigFor
           mkdir ~/.instaup
           echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.instaup/themariocrafter.login
           tubeup --get-comments https://youtube.com/playlist?list=PLuqy83wG7WekC77bSbvE1VWDDiNRxOAG_
