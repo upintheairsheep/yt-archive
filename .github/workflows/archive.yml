@@ -35,7 +35,7 @@ jobs:
         env:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
         with:
-          args: help
+          args: "copy :http,url='http://s1.bitdl.ir/Software/HandHeld/': internetarchive:handheldsoftwarecollection"
       - uses: actions/cache@v3
         id: cache
         with:
@@ -54,8 +54,7 @@ jobs:
           echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.config/instaloader/session-themariocrafter
           # instaloader :stories --login themariocrafter 
           # zip -r stories.zip ":stories" 
-          # ia upload instagramstories20230216 stories.zip --retries 100          
-          rclone copy :http,url='http://s1.bitdl.ir/Software/HandHeld/': internetarchive:handheldsoftwarecollection
+          # ia upload instagramstories20230216 stories.zip --retries 100                    
           mkdir ~/.instaup
           echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.instaup/themariocrafter.login
           tubeup --get-comments https://youtube.com/playlist?list=PLuqy83wG7WekC77bSbvE1VWDDiNRxOAG_
