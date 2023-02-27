@@ -35,7 +35,7 @@ jobs:
         env:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
         with:
-          args: "copy :http: --http-url http://www.partytest.zyhdi-munisi.com/ archive:partytest-zyhdi-munisi"
+          args: "copy :http: --http-url https://limowski.space/downloads/ archive:limowski-space-downloads"
       - uses: actions/cache@v3
         id: cache
         with:
