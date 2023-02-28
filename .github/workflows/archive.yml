@@ -35,7 +35,7 @@ jobs:
         env:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
         with:
-          args: "copy :http: --http-url https://doc.downloadha.com/ archive:docdownloadhaarchive --include *.ipa,*.apk"
+          args: "copy :http: --http-url http://ftp.axis.com/ archive:TheAxisMobileApps --include *.ipa,*.apk"
       - uses: actions/cache@v3
         id: cache
         with:
