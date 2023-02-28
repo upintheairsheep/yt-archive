@@ -28,6 +28,8 @@ jobs:
           # python3 setup.py install
           pip install internetarchive tubeup==0.0.33 snscrape gallery-dl instaup yt-dlp
           mkdir -p ~/.tubeup          
+          mkdir -p ~/archivemnt
+          mkdir -p ~/opendir
           # playwright install firefox
       - uses: actions/checkout@master
       - name: rclone
@@ -35,7 +37,7 @@ jobs:
         env:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
         with:
-          args: "copy :http: --http-url http://s1.bitdl.ir/Software/HandHeld/ archive:handheldarchive"
+          args: "mount archive:handheldarchiveiphone ~/archivemnt &"
       - uses: actions/cache@v3
         id: cache
         with:
@@ -43,7 +45,13 @@ jobs:
           key: ${{ matrix.channel }}
           # - name: Debugging with ssh
           #   uses: lhotari/action-upterm@v1
-
+      - uses: actions/checkout@master
+      - name: rclone
+        uses: wei/rclone@v1
+        env:
+          RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
+        with:
+          args: "mount :http: --http-url http://s1.bitdl.ir/Software/HandHeld/ ~/opendir &"
       - name: Download and upload channel videos
         env: 
           IA_EMAIL: ${{ secrets.IA_EMAIL }}
@@ -55,10 +63,11 @@ jobs:
           # instaloader :stories --login themariocrafter 
           # zip -r stories.zip ":stories" 
           # ia upload instagramstories20230216 stories.zip --retries 100    
-          tubeup https://montcs.bloomu.edu/~bobmon/DigFor
+          # tubeup https://montcs.bloomu.edu/~bobmon/DigFor
           mkdir ~/.instaup
           echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.instaup/themariocrafter.login
-          tubeup --get-comments https://youtube.com/playlist?list=PLuqy83wG7WekC77bSbvE1VWDDiNRxOAG_
+          unrar x ~/opendir/Iphone 
+          # tubeup --get-comments https://youtube.com/playlist?list=PLuqy83wG7WekC77bSbvE1VWDDiNRxOAG_
           # instaup ${{ matrix.channel }} --login themariocrafter --delete
           # sudo mkdir /home/internetarchive
           # cd /home/internetarchive
