@@ -35,7 +35,7 @@ jobs:
         env:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
         with:
-          args: "copy :http: --http-url https://www.kaisa.com/wp-content/uploads/?C=N;O=D archive:kaisauploads"
+          args: "copy :http: --http-url https://download.ddp.org.nz/ archive:DDPIPAdownloads"
       - uses: actions/cache@v3
         id: cache
         with:
