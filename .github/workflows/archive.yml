@@ -35,7 +35,7 @@ jobs:
         env:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
         with:
-          args: "copy :http: --http-url http://download.samygo.tv/ archive:samygodownloadsarchive2"
+          args: "copy :http: --http-url http://johndio.com:880/ftp1/IOS%20Mobile%20Apps/ archive:johndioslegacyiosappcollection"
       - uses: actions/cache@v3
         id: cache
         with:
