@@ -35,7 +35,7 @@ jobs:
         env:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
         with:
-          args: "copy :http: --http-url http://johndio.com:880/ftp1/IOS%20Mobile%20Apps/ archive:johndioslegacyiosappcollection"
+          args: "copy :http: --http-url http://www.salixa.com/trh/ios/IPAs/ipa/ archive:salixaiosappcollection"
       - uses: actions/cache@v3
         id: cache
         with:
