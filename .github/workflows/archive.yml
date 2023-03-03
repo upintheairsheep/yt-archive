@@ -35,7 +35,7 @@ jobs:
         env:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
         with:
-          args: "copy :http: --http-url https://releases.wikimedia.org/mobile/ archive:wikipedia-mobile-app-archive"
+          args: "copy :http: --http-url archive:downloadshaipaarchive --include '*ipa' "
       - uses: actions/cache@v3
         id: cache
         with:
