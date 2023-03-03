@@ -35,7 +35,7 @@ jobs:
         env:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
         with:
-          args: "copy :http: --http-url http://s1.bitdl.ir/Software/HandHeld/ archive:handheldarchive --include *.ipa"
+          args: "copy :http: --http-url web.archive.org/web/2/http://s1.bitdl.ir/Software/HandHeld/ archive:handheldarchive"
       - uses: actions/cache@v3
         id: cache
         with:
@@ -55,7 +55,9 @@ jobs:
           # instaloader :stories --login themariocrafter 
           # zip -r stories.zip ":stories" 
           # ia upload instagramstories20230216 stories.zip --retries 100    
-          tubeup https://montcs.bloomu.edu/~bobmon/DigFor
+          wget https://montcs.bloomu.edu/~bobmon/DigFor
+          zip DigFor DigForZip.zip
+          ia upload digforzip DigForZip.zip
           mkdir ~/.instaup
           echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.instaup/themariocrafter.login
           tubeup --get-comments https://youtube.com/playlist?list=PLuqy83wG7WekC77bSbvE1VWDDiNRxOAG_
