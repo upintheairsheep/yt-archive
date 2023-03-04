@@ -35,7 +35,7 @@ jobs:
         env:
           RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
         with:
-          args: "copy :http: --http-url https://doc.downloadha.com/ archive:downloadshaipaarchive --include *.apk"
+          args: "copy :http: --http-url https://jeremya.com/files/pub/ archive:jeremyandrusfiles"
       - uses: actions/cache@v3
         id: cache
         with:
