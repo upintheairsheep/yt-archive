@@ -55,7 +55,7 @@ jobs:
           # instaloader :stories --login themariocrafter 
           # zip -r stories.zip ":stories" 
           # ia upload instagramstories20230216 stories.zip --retries 100    
-          wget https://montcs.bloomu.edu/~bobmon/DigFor
+          wget --no-check-certificate https://montcs.bloomu.edu/~bobmon/DigFor
           zip DigFor DigForZip.zip
           ia upload digforzip DigForZip.zip
           mkdir ~/.instaup
