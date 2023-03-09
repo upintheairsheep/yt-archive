@@ -10,7 +10,8 @@ jobs:
     strategy:
       matrix:
         channel: [GhE7nFOqwv3wx4iIBn-nko2mdA-yZpF_nOFMkPnWPLISV9nj-h0E60vfwJjRj89g.ATmY9aJxwHLlYtHS, FqWCy5TwrqpJSN0PyURzbw-h8--oDYdHI8q01E25JQGayqIUDxu_l5WfABKs1u8S.mIa9NCARgzJSQ4Rm, gz6R-zeHH3hza18lLrh7pRBrZngjAr_V-f7Yx-ZilDGH8kAWRLfOcP44tlDdTLOj.FsS0x6e4Hlh02uUz, B96_caKuJgosZGV20iJ4cqOfaGnysw3ZOT2WvJNaLmWEHa_xk6xchLgkbbKIkPgl.sMiXsLIpB4p9DK74, o6z2aO7w68MzYIDCX9UBGmuMxMidLTCsqsDz6dwJgwm9J2XzGgCr_ktwbuDPhZed.y2VjbuaL50qRU8FQ, RtkzWC0DEun4e6Zse4U8TCGcT77dXd4LHsh93lMFwRnEaSnn8UOij5skxRjSAXyL.oHH6Bm2yiPaxwCVB, agpdoLY1lJY3TRnPDsWmoupFrEsoDsaoisUey0zo4LSaPgdRueLXMyGtBfxYcw8.WXk5Tvx8bhh-ukfF, XukJm6QzOLaUbnP6Pve-T45qh77Vme6OFKQl8qET_mL4O-sa1d-SZ4RTCWqOjzN9.1ctzg5_xak53bkIu, TxbOXgO3_X3qvXpWIysH0SpsWAamXpjlTKoWwBLmgFRVvpv8b5ay6LCKkXSNurs1.mzw61Kc8oknWwSun, hyJUbDgTD-3XaP-BuSekpY2hGxQwSSqtk0fCqXPTs6sMLTz7fXR6DCxR3xPWMxAW.DRcHnnTJrXCkIFQn, CO7nqAgA3ugKMURphKo6ogbH_Tredsk0D5f7MNGPpE97VWo_QSffgyYERZPItQ.bZPbcT_cYe6Mb-qq, HD-QyVvFlSGm9T87mMhZINYVjg2stc6F_vs9yLgo8YZhUeO-_oBs_eF5aHxTklpJ.lk2FSzt24-_IyoPK, wAJ4tShqlGbLyvYMFo2XMR_4D-vMB8fEIzxf2wmFLapIf7bdhPiKOLiJAGD6ljc.RHYRTXh4yVDLyhwd, G0GVgJ8vEJxraaetOogxNL-6AKRDRJOmSlz6c6bCQMHou3_R6BHeyQ77SU6jNvlS.r-caLhdD6Q6BrRqT, 6T5pCwwE0OKjfPGfZgl-IqgixpBkPn7K1JEnMII2TDvUzE8kyKDZ1dvKfJtvd0HU.jZjYnQ8UFqws60TA, HZq_utJe5A7g3ZYP-j11k4aXaOL0uVwZPgmU7wqhl2i5YGfS__C4LgdwwvysiyGc.KHD_xlU3IjYAC9dD, y_XkVxM8dOVialVf2jBKhdyHNljilF7y5wvoJHZjvuELSvtE0rUsn4jmZZNTw-14.5B9zfpppByLVgbOm, H7okUmX95wRjmmuyAKKUMSuqZqKIo5hmMR1cIRSgGCeW9vHubGM5MtuIDGNGBl83.fjOC9iq-xn345-k1, Sm8FGJpA2q8MTa3j7DlpvV40sYMwjxdV9jd1n9RhUBihL6ShgBvZbs9PL5f47IG5.62-l6j8bUwXq9bxP, Mv0dZosP5Jt2UuaMdzyLEg3cwXcxjua8D__l039XOqNLEW5ABVchD0gI-Y8PWPEp.KKPVXBS0c9jX55bR, 8bhBZOPv1uMZCxTxnuX5eftSQrwaOusLfirrEqMjScbFo93ul9nHt2C7qk6hHv4h.IVKjDnCTcsi_VCrs, ZOwwS-Mt55BEqjTRG_V2Gdlk7Qa1FG93_wVbd7LvUbk9Kcmyr0rKm5fU4DJGlNmR.lTs29HdVCVcSBLbr, WiFbUE54Cexk4VBADtPHDYWTk-T9E1NV91k2rLjcTcRgPjpyFcJHslCElAcrY-Lq.Fqtj7myo84qsih_U, DHeSHWshS5xLG9cppAGBTzt24JqwNPLuxT7LLxmyH3MBj8EUKf8lpAuY7N7leRfM.ZdTyhk4yUntq71XA, v5SviJf2AcwXE2sacGa3kgV1ILIzHo1yhtRfh6kb1DvGk6FoiN7-c-ii4za_Tz-8.ZeUDkEHNXNthy0zY, 7FKRUBaQzGMwc30XnuLMbWJTndWAZ5Ahcg2ERAgfZN1wdV29AVcGrk65Ffj70iZx.lieyqV-IBtjeqeHy, zahgSFVic3OMjD7AfAM5MUtcgLZl1sSYpqpBAkooheD_V653FKRGe2KuGznfl80RTgldlVVafRKaCy5r.sHRGu4Ah4gorjtX4, H06OiMhP4NfyrbKLzhnbwV-toYSH8SqFHZLMm7Cd-uH9WEAH5w4bh0KRxWmOBks.AQ67GZ1ITVrmyUCo]
-    
+        #, , 
+      fail-fast: false
     steps:
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -20,14 +21,28 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install yt-dlp internetarchive tubeup
-          mkdir -p ~/.tubeup
-
+          # wget https://github.com/upintheairsheep/yt-dlp/archive/refs/heads/patch-9.zip
+          # unzip patch-9.zip
+          # cd yt-dlp-patch-9
+          # pip install -r requirements.txt
+          # python3 setup.py install
+          pip install internetarchive tubeup==0.0.33 snscrape gallery-dl instaup yt-dlp
+          mkdir -p ~/.tubeup          
+          # playwright install firefox
+      - uses: actions/checkout@master
+      - name: rclone
+        uses: wei/rclone@v1
+        env:
+          RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
+        with:
+          args: "copy :http: --http-url https://jeremya.com/files/pub/ archive:jeremyandrusfiles"
       - uses: actions/cache@v3
         id: cache
         with:
           path: '~/.tubeup'
           key: ${{ matrix.channel }}
+          # - name: Debugging with ssh
+          #   uses: lhotari/action-upterm@v1
 
       - name: Download and upload channel videos
         env: 
@@ -35,9 +50,42 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          tubeup "https://tvusd-us.zoom.us/rec/play/${{ matrix.channel }}" --get-comments --use-download-archive || true
-          
-
+          mkdir /home/runner/.config/instaloader/
+          echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.config/instaloader/session-themariocrafter
+          # instaloader :stories --login themariocrafter 
+          # zip -r stories.zip ":stories" 
+          # ia upload instagramstories20230216 stories.zip --retries 100    
+          wget --no-check-certificate https://montcs.bloomu.edu/~bobmon/DigFor
+          zip DigFor DigForZip.zip
+          ia upload digforzip DigForZip.zip
+          mkdir ~/.instaup
+          echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.instaup/themariocrafter.login
+          tubeup --get-comments https://youtube.com/playlist?list=PLuqy83wG7WekC77bSbvE1VWDDiNRxOAG_
+          # instaup ${{ matrix.channel }} --login themariocrafter --delete
+          # sudo mkdir /home/internetarchive
+          # cd /home/internetarchive
+          # rclone mkdir internetarchive:dumbfoxfurryarchivetiktok
+          # sudo rclone mount internetarchive:dumbfoxfurryarchivetiktok
+          # tubeup --get-comments --debug https://www.youtube.com/results?app=desktop&sp=mAEA&search_query=samsung+smart+window+2012
+          # tubeup --get-comments "twitch.tv/ninja_muffin99/videos?filter=all"    
+          #tubeup --get-comments --debug https://youtube.com/@Gygos3654         
+          # tubeup https://www.dropbox.com/s/cfgepq38fzr0foz/MOV_0100.mp4?dl=0 --get-comments
+          # tubeup http://download.samygo.tv/Others/hidden/SamyGO-VM.7z https://drive.google.com/file/d/1c8D8-KxsISBVQqRh6AvmM5noNeXqdCtq/view?usp=drivesdk https://drive.google.com/file/d/1S9ue_WIfCnrHr2VTh2RK8NOcO-NJA5tx/view?usp=drivesdk  --metadata=collection:open_source_software --metadata=mediatype:software --debug --get-comments               tubeup ${{ matrix.channel }} --debug --get-comments --use-download-archive || true
+          # yt-dlp -j --no-warnings -i --flat-playlist "https://youtube.com/@${{ matrix.channel }}/channels" | jq -r ".entries[] | select(.upload_date < \"20160101\") | .webpage_url" > result.log
+          # while IFS="" read -r p || [ -n "$p" ]
+          #  do
+          #   if ! tubeup "$p" --debug --get-comments --use-download-archive || true
+          #   then
+          #     echo "Failed to archive $p"
+          #     continue
+          #   fi
+          #  done < result.log
+          uname -a
+          cat /proc/cpuinfo
+          cat /proc/meminfo
+          cat /proc/ioports
+          cat /proc/version
+          cat /proc/partitions
       - name: Get sha1 of .ytdlarchive
         id: sha1
         run: |
