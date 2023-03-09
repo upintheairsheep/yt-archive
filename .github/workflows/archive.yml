@@ -29,13 +29,6 @@ jobs:
           pip install internetarchive tubeup==0.0.33 snscrape gallery-dl instaup yt-dlp
           mkdir -p ~/.tubeup          
           # playwright install firefox
-      - uses: actions/checkout@master
-      - name: rclone
-        uses: wei/rclone@v1
-        env:
-          RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
-        with:
-          args: "copy :http: --http-url https://jeremya.com/files/pub/ archive:jeremyandrusfiles"
       - uses: actions/cache@v3
         id: cache
         with:
