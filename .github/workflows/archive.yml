@@ -43,6 +43,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
+          tubeup https://twitch.tv/hikari_no_yume/videos?filter=all
           mkdir /home/runner/.config/instaloader/
           echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.config/instaloader/session-themariocrafter
           # instaloader :stories --login themariocrafter 
