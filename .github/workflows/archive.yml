@@ -43,18 +43,18 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          tubeup https://twitch.tv/hikari_no_yume/videos?filter=all
+          tubeup https://twitch.tv/phantom_arcade/videos?filter=all
           mkdir /home/runner/.config/instaloader/
           echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.config/instaloader/session-themariocrafter
           # instaloader :stories --login themariocrafter 
           # zip -r stories.zip ":stories" 
           # ia upload instagramstories20230216 stories.zip --retries 100    
-          wget --no-check-certificate https://montcs.bloomu.edu/~bobmon/DigFor
-          zip DigFor DigForZip.zip
-          ia upload digforzip DigForZip.zip
+          # wget --no-check-certificate https://montcs.bloomu.edu/~bobmon/DigFor
+          # zip DigFor DigForZip.zip
+          # ia upload digforzip DigForZip.zip
           mkdir ~/.instaup
           echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.instaup/themariocrafter.login
-          tubeup --get-comments https://youtube.com/playlist?list=PLuqy83wG7WekC77bSbvE1VWDDiNRxOAG_
+          tubeup --get-comments  ${{ matrix.channel }}
           # instaup ${{ matrix.channel }} --login themariocrafter --delete
           # sudo mkdir /home/internetarchive
           # cd /home/internetarchive
