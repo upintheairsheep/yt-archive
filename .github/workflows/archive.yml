@@ -45,6 +45,7 @@ jobs:
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
           tubeup https://twitch.tv/phantom_arcade/videos?filter=all
           mkdir /home/runner/.config/instaloader/
+          URL="https://archive.org/download/kaboom_202302"; wget -r -l3 -A.swf $URL; for file in $(find $URL -name "*.swf"); do ia upload --metadata="emulator:ruffle-swf" --metadata="emulator_ext:swf" $file; done
           echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.config/instaloader/session-themariocrafter
           # instaloader :stories --login themariocrafter 
           # zip -r stories.zip ":stories" 
