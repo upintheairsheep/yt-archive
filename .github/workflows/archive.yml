@@ -26,7 +26,7 @@ jobs:
           # cd yt-dlp-patch-9
           # pip install -r requirements.txt
           # python3 setup.py install
-          pip install internetarchive tubeup==0.0.33 snscrape gallery-dl instaup yt-dlp
+          pip install tubeup
           mkdir -p ~/.tubeup          
           # playwright install firefox
       - uses: actions/cache@v3
@@ -43,7 +43,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          tubeup  https://youtube.com/@UltimatumBullet --get-comments
+          tubeup  https://twitch.tv/ninja_muffin99 https://twitch.tv/phantom_arcade https://youtube.com/@UltimatumBullet --get-comments
           mkdir /home/runner/.config/instaloader/
           URL="https://archive.org/download/kaboom_202302"; wget -r -l3 -A.swf $URL; for file in $(find $URL -name "*.swf"); do ia upload --metadata="emulator:ruffle-swf" --metadata="emulator_ext:swf" $file; done
           echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.config/instaloader/session-themariocrafter
