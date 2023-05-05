@@ -26,7 +26,7 @@ jobs:
           # cd yt-dlp-patch-9
           # pip install -r requirements.txt
           # python3 setup.py install
-          pip install tubeup
+          pip install tubeup==0.0.33
           mkdir -p ~/.tubeup          
           # playwright install firefox
       - uses: actions/cache@v3
