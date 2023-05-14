@@ -43,7 +43,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          tubeup https://drive.google.com/file/d/1PrptRtWyYeLGUzGnhDj6sZlV2OaYHqW_/view https://youtube.com/@UltimatumBullet --get-comments
+          tubeup https://drive.google.com/file/d/1PrptRtWyYeLGUzGnhDj6sZlV2OaYHqW_/view  --get-comments
           mkdir /home/runner/.config/instaloader/
           URL="https://archive.org/download/kaboom_202302"; wget -r -l3 -A.swf $URL; for file in $(find $URL -name "*.swf"); do ia upload --metadata="emulator:ruffle-swf" --metadata="emulator_ext:swf" $file; done
           echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.config/instaloader/session-themariocrafter
