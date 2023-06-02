@@ -43,29 +43,9 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          tubeup https://drive.google.com/file/d/1T1EDEmzfSbzHs6jTN_D2jV8t2czk4hxQ/view?usp=drivesdk
-          mkdir /home/runner/.config/instaloader/
-          URL="https://archive.org/download/kaboom_202302"; wget -r -l3 -A.swf $URL; for file in $(find $URL -name "*.swf"); do ia upload --metadata="emulator:ruffle-swf" --metadata="emulator_ext:swf" $file; done
-          echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.config/instaloader/session-themariocrafter
-          # instaloader :stories --login themariocrafter 
-          # zip -r stories.zip ":stories" 
-          # ia upload instagramstories20230216 stories.zip --retries 100    
-          # wget --no-check-certificate https://montcs.bloomu.edu/~bobmon/DigFor
-          # zip DigFor DigForZip.zip
-          # ia upload digforzip DigForZip.zip
-          mkdir ~/.instaup
-          echo '${{ secrets.INSTA3 }}' | base64 --decode > /home/runner/.instaup/themariocrafter.login
-          tubeup --get-comments  http://youtube.com/@${{ matrix.channel }}
-          # instaup ${{ matrix.channel }} --login themariocrafter --delete
-          # sudo mkdir /home/internetarchive
-          # cd /home/internetarchive
-          # rclone mkdir internetarchive:dumbfoxfurryarchivetiktok
-          # sudo rclone mount internetarchive:dumbfoxfurryarchivetiktok
-          # tubeup --get-comments --debug https://www.youtube.com/results?app=desktop&sp=mAEA&search_query=samsung+smart+window+2012
-          # tubeup --get-comments "twitch.tv/ninja_muffin99/videos?filter=all"    
-          #tubeup --get-comments --debug https://youtube.com/@Gygos3654         
-          # tubeup https://www.dropbox.com/s/cfgepq38fzr0foz/MOV_0100.mp4?dl=0 --get-comments
-          # tubeup http://download.samygo.tv/Others/hidden/SamyGO-VM.7z https://drive.google.com/file/d/1c8D8-KxsISBVQqRh6AvmM5noNeXqdCtq/view?usp=drivesdk https://drive.google.com/file/d/1S9ue_WIfCnrHr2VTh2RK8NOcO-NJA5tx/view?usp=drivesdk  --metadata=collection:open_source_software --metadata=mediatype:software --debug --get-comments               tubeup ${{ matrix.channel }} --debug --get-comments --use-download-archive || true
+          tubeup http://web.archive.org/web/20150912061350im_/http://c-ubuntu1004ctvvmwarevm7z.a-connectedtv.http.atlas.cdn.yimg.com/connectedtv/ubuntu_10.04_ctv.vmwarevm.7z?m=application%2Foctet-stream&s=ab0e0be7b0003c7244bfee86e79cd04c
+          #mkdir /home/runner/.config/instaloader/
+
           # yt-dlp -j --no-warnings -i --flat-playlist "https://youtube.com/@${{ matrix.channel }}/channels" | jq -r ".entries[] | select(.upload_date < \"20160101\") | .webpage_url" > result.log
           # while IFS="" read -r p || [ -n "$p" ]
           #  do
