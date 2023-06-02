@@ -34,8 +34,6 @@ jobs:
         with:
           path: '~/.tubeup'
           key: ${{ matrix.channel }}
-          # - name: Debugging with ssh
-          #   uses: lhotari/action-upterm@v1
 
       - name: Download and upload channel videos
         env: 
@@ -43,9 +41,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          tubeup http://web.archive.org/web/20150912061350im_/http://c-ubuntu1004ctvvmwarevm7z.a-connectedtv.http.atlas.cdn.yimg.com/connectedtv/ubuntu_10.04_ctv.vmwarevm.7z?m=application%2Foctet-stream&s=ab0e0be7b0003c7244bfee86e79cd04c
-          #mkdir /home/runner/.config/instaloader/
-
+          tubeup "http://web.archive.org/web/20150912061350im_/http://c-ubuntu1004ctvvmwarevm7z.a-connectedtv.http.atlas.cdn.yimg.com/connectedtv/ubuntu_10.04_ctv.vmwarevm.7z?m=application%2Foctet-stream&s=ab0e0be7b0003c7244bfee86e79cd04c"
           # yt-dlp -j --no-warnings -i --flat-playlist "https://youtube.com/@${{ matrix.channel }}/channels" | jq -r ".entries[] | select(.upload_date < \"20160101\") | .webpage_url" > result.log
           # while IFS="" read -r p || [ -n "$p" ]
           #  do
@@ -55,12 +51,6 @@ jobs:
           #     continue
           #   fi
           #  done < result.log
-          uname -a
-          cat /proc/cpuinfo
-          cat /proc/meminfo
-          cat /proc/ioports
-          cat /proc/version
-          cat /proc/partitions
       - name: Get sha1 of .ytdlarchive
         id: sha1
         run: |
