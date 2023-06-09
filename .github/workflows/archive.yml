@@ -41,7 +41,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          tubeup "http://web.archive.org/web/20150912061350im_/http://c-ubuntu1004ctvvmwarevm7z.a-connectedtv.http.atlas.cdn.yimg.com/connectedtv/ubuntu_10.04_ctv.vmwarevm.7z?m=application%2Foctet-stream&s=ab0e0be7b0003c7244bfee86e79cd04c"
+          tubeup "https://youtu.be/bOR38552MJA" --get-comments
           # yt-dlp -j --no-warnings -i --flat-playlist "https://youtube.com/@${{ matrix.channel }}/channels" | jq -r ".entries[] | select(.upload_date < \"20160101\") | .webpage_url" > result.log
           # while IFS="" read -r p || [ -n "$p" ]
           #  do
