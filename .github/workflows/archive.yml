@@ -41,7 +41,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          tubeup "https://youtu.be/bOR38552MJA" --get-comments
+          tubeup "https://www.reddit.com/r/teslamotors/comments/a1fln4/rooted_tesla_model_3_running_ubuntu_and_youtube/" --get-comments
           # yt-dlp -j --no-warnings -i --flat-playlist "https://youtube.com/@${{ matrix.channel }}/channels" | jq -r ".entries[] | select(.upload_date < \"20160101\") | .webpage_url" > result.log
           # while IFS="" read -r p || [ -n "$p" ]
           #  do
