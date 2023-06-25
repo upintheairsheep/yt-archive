@@ -41,7 +41,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          tubeup "https://www.reddit.com/r/teslamotors/comments/a1fln4/rooted_tesla_model_3_running_ubuntu_and_youtube/" --get-comments
+          tubeup "https://info.marketing.vewd.com/cs/c/?cta_guid=a959a93d-6400-49df-9221-e06a37c0f113&signature=AAH58kFAg9EBPS30mz4wZB3e43lweCAKSw&pageId=71872176707&placement_guid=12e33b00-2654-4ef1-992e-f24008f58a4f&click=5d2abf09-0f69-4c40-85d3-6db0a920eff4&hsutk=4b660a9649045aca1f408b5e0c5b6de6&canon=https%3A%2F%2Finfo.marketing.vewd.com%2Fvewd-tv-emulator-download&utm_referrer=https%3A%2F%2Fwww.vewd.com%2F&portal_id=4398576&contentType=landing-page&redirect_url=APefjpF9zg9y98QmFvXZE4VaEUUH5H8R-Asa5KNSnG5K6NZgdeBx_wmwIA4XeNJpPhwzRnN9oc62gSqH-Aa3eIZ2cta3FedXGzlqtHeiV77WnzCSqM9fv7FKKoFserKNqYaa7dxBviGbxIasph6bW82Ixr5s6q6lWqXeo7anFdv46udxjFViTTfYnRcfi1x9guedB6UoXwBdWOQd4Pwzkf8FhXZt3pv_wLR46BcIRHXRUv96LkwxrDgoDRANqpvI2EhDNPBVzBC6QpmwZkPvtMTChdnQ4Rb1uT2ywFjtTZtAL54DzQphby_IyZi0KDiNqOjvpbwFEvh0PUKSYAq5xHF7qqINM-bn4g&__hstc=178751163.4b660a9649045aca1f408b5e0c5b6de6.1687720300875.1687720300875.1687720300875.1&__hssc=178751163.1.1687720300875&__hsfp=1320155500" --get-comments
           # yt-dlp -j --no-warnings -i --flat-playlist "https://youtube.com/@${{ matrix.channel }}/channels" | jq -r ".entries[] | select(.upload_date < \"20160101\") | .webpage_url" > result.log
           # while IFS="" read -r p || [ -n "$p" ]
           #  do
