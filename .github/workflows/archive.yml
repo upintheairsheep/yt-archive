@@ -41,7 +41,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          tubeup "https://drive.google.com/file/d/1X8796OmIlYo9axh43M0Uq_3zrJhMDaSu/view?usp=drivesdk" https://drive.google.com/file/d/1faltVNkAOlUoPs3cVoDnsW01lNMaYIF-/view?usp=drivesdk --get-comments
+          tubeup "https://drive.google.com/file/d/1PbybHVf8Jf8WMQLTxI6D9c-iF5zs-mnW/view?usp=sharing"  --get-comments
           # yt-dlp -j --no-warnings -i --flat-playlist "https://youtube.com/@${{ matrix.channel }}/channels" | jq -r ".entries[] | select(.upload_date < \"20160101\") | .webpage_url" > result.log
           # while IFS="" read -r p || [ -n "$p" ]
           #  do
