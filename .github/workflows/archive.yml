@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        channel: [Aluzky]
+        channel: [newlinersseries]
         #, , 
       fail-fast: false
     steps:
@@ -41,16 +41,16 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          tubeup "https://tiktok.com/@newlinersseries"  --get-comments
-          # yt-dlp -j --no-warnings -i --flat-playlist "https://youtube.com/@${{ matrix.channel }}/channels" | jq -r ".entries[] | select(.upload_date < \"20160101\") | .webpage_url" > result.log
-          # while IFS="" read -r p || [ -n "$p" ]
-          #  do
-          #   if ! tubeup "$p" --debug --get-comments --use-download-archive || true
-          #   then
-          #     echo "Failed to archive $p"
-          #     continue
-          #   fi
-          #  done < result.log
+          # tubeup "https://tiktok.com/@newlinersseries"  --get-comments
+          yt-dlp -j --no-warnings -i --flat-playlist "https://tiktok.com/@${{ matrix.channel }}" > result.log
+          while IFS="" read -r p || [ -n "$p" ]
+            do
+             if ! tubeup "$p" --debug --get-comments --use-download-archive || true
+             then
+               echo "Failed to archive $p"
+               continue
+             fi
+            done < result.log
       - name: Get sha1 of .ytdlarchive
         id: sha1
         run: |
