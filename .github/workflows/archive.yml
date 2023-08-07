@@ -42,7 +42,7 @@ jobs:
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
           # tubeup "https://tiktok.com/@newlinersseries"  --get-comments
-          yt-dlp -j --no-warnings -i --flat-playlist "https://tiktok.com/@${{ matrix.channel }}" > result.log
+          yt-dlp -j --no-warnings -i --flat-playlist "https://tiktok.com/@${{ matrix.channel }}" | jq -r ".urls"  > result.log
           while IFS="" read -r p || [ -n "$p" ]
             do
              if ! tubeup "$p" --debug --get-comments --use-download-archive || true
