@@ -43,7 +43,7 @@ jobs:
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
           # tubeup "https://tiktok.com/@newlinersseries"  --get-comments
           yt-dlp -j --no-warnings -i --flat-playlist "https://tiktok.com/@newlinersseries" | jq -r ".id" > result.log
-          
+          tubeup https://twitch.tv/tnickelss/videos?filter=archives
           while IFS="" read -r p || [ -n "$p" ]; do
               if [ -z "$p" ]; then
                   echo "Empty URL found"
