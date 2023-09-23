@@ -42,15 +42,14 @@ jobs:
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
           # tubeup "https://tiktok.com/@newlinersseries"  --get-comments
-          yt-dlp -j --no-warnings -i --flat-playlist "https://tiktok.com/@newlinersseries" | jq -r ".id" > result.log
-          tubeup https://twitch.tv/tnickelss/videos?filter=archives
+          yt-dlp -j --no-warnings -i --flat-playlist "https://twitch.tv/tnickelss/videos?filter=archives" | jq -r ".url" > result.log
           while IFS="" read -r p || [ -n "$p" ]; do
               if [ -z "$p" ]; then
                   echo "Empty URL found"
                   continue
               fi
           
-              if ! tubeup https://tiktok.com/@newlinersseries/video/"$p" --debug --get-comments --use-download-archive || true; then
+              if ! tubeup "$p" --debug --get-comments --use-download-archive || true; then
                   echo "Failed to archive $p"
               fi
           done < result.log
