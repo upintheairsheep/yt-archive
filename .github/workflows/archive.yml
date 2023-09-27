@@ -41,7 +41,7 @@ jobs:
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
         run: |
           ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
-          # tubeup "https://tiktok.com/@newlinersseries"  --get-comments
+          tubeup "https://www.tiktok.com/@papyrusspeeslosh?_t=8g2YXVztl8A&_r=1"  --get-comments
           yt-dlp -j --no-warnings -i --flat-playlist "https://twitch.tv/tnickelss/videos?filter=archives" | jq -r ".url" > result.log
           while IFS="" read -r p || [ -n "$p" ]; do
               if [ -z "$p" ]; then
