@@ -39,6 +39,7 @@ jobs:
         env: 
           IA_EMAIL: ${{ secrets.IA_EMAIL }}
           IA_PASSWORD: ${{ secrets.IA_PASSWORD }}
+          IA_INI: ${{ secrets.IA_INI }}
         run: |
           # ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
           cat "$IA_INI" > ~/.config/ia.ini
