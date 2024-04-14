@@ -44,7 +44,7 @@ jobs:
           # ia configure --username="$IA_EMAIL" --password="$IA_PASSWORD"
           echo "$IA_INI" > ~/.config/ia.ini
           # tubeup "https://www.tiktok.com/@papyrusspeeslosh?_t=8g2YXVztl8A&_r=1"  --get-comments
-          yt-dlp -j --no-warnings -i --flat-playlist "https://youtube.com/@Apple" | jq -r ".url" > result.log
+          yt-dlp -j --no-warnings -i --flat-playlist "https://youtube.com/@Samsung" | jq -r ".url" > result.log
           while IFS="" read -r p || [ -n "$p" ]; do
               if [ -z "$p" ]; then
                   echo "Empty URL found"
